@@ -1,6 +1,6 @@
-# Personal Codex Skills
+# Codex Skills Collection
 
-个人 Codex skills 集合，按使用领域分类。
+一组可复用的 Codex skills，按使用领域分类，适合个人使用与开源分享。
 
 ## 当前 Skills
 

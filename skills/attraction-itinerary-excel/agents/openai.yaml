@@ -1,0 +1,4 @@
+interface:
+  display_name: "景点票务 Excel 整理"
+  short_description: "从行程提取景点，查询票价和开放时间并生成完整 Excel"
+  default_prompt: "从我的行程截图或文档提取所有地点，在线核实票价和开放时间，并生成包含人民币换算和来源链接的完整 Excel。"

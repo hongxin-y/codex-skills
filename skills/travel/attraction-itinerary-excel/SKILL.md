@@ -18,6 +18,25 @@ Use this skill when the user provides a travel itinerary image/document and asks
 7. Use the spreadsheet skill and `@oai/artifact-tool` for authoring. Add a formatted table, freeze the header row, wrap long text, set readable widths, and keep plain-text URLs in the source column. Save the final `.xlsx` under the conversation's `outputs` directory.
 8. Verify exact fidelity in both directions: every source item has exactly one corresponding Excel row (including explicit duplicates), and every Excel row can be traced back to a source item. Report any mismatch and stop before export until resolved. Check that no location is missing, added, renamed into a different place, or accidentally split/merged. Inspect key ranges, scan for formula errors, render the sheet once, and fix clipped headers or unreadable rows before delivery.
 
+## Search and verification method
+
+- Search each place in at least two forms: an English name plus `official tickets`/`opening hours`, and the local-language name plus the local terms for tickets and opening hours (for example, Hungarian `jegyárak`, `jegyvásárlás`, and `nyitvatartás`). Use the venue name, city, and year when prices may be seasonal.
+- Prefer the attraction's own official domain. If a page redirects, fails, or is an old subdomain, follow the official site's ticket link and record the final working ticket domain. Do not retain a URL merely because it appeared in a search result. Check the final URL with a direct request or browser page load when possible.
+- Use search-engine snippets only to discover candidate pages, never as the sole evidence for a price or policy. When Google is blocked or challenged, use DuckDuckGo HTML search or another accessible search engine, then open and inspect the official result. Record the official page URL in the workbook rather than the search URL.
+- For each paid place, explicitly test whether the ticket is online, on-site only, or both. Record operational constraints such as card-only payment, a physical ticket office, timed entry, language/date selection, CAPTCHA, visitor-center sales, or limited same-day leftovers.
+- Treat release timing as a separate fact from ticket availability. Look for wording such as `advance`, `available from`, `calendar`, `release`, and local equivalents. If the official source does not publish a fixed release day or advance window, write `未公布固定放票规则；按官方日历滚动开放` rather than inventing a date. Use third-party claims only as a clearly labelled practical tip, not as an official rule.
+- Cross-check prices and hours against the date in the itinerary. Prefer the official price page, ticket page, or visitor-information page; if the official page is dynamic or protected by CAPTCHA, retain the official URL and state the verification limitation in `备注`. For a seasonal venue, calculate the applicable season from the itinerary date and preserve both the season rule and the date-specific conclusion.
+- When a result conflicts with the workbook, update every affected field together: `成人票价（参考）`, `人民币折算（约）`, `票种/说明`, `开放时间（参考）`, `购票/官网`, and the booking/onsite notes. Never leave an old URL or old price in a parallel column.
+
+## Restaurant reservation handling
+
+- Every restaurant, café, or food venue listed in the source must receive a reservation check, even when no admission ticket is involved. Search the official site for `reservation`, `book a table`, `table reservation`, `asztalfoglalás`, and `foglalás`, and inspect the venue's official contact page and social profile when linked from the official site.
+- Record the actual reservation channel, not just the restaurant homepage: use the official online booking URL when a working form or booking widget exists. Verify that the page loads and that the booking flow reaches date/time/party-size selection when possible.
+- If no reliable online reservation page exists, look for an official email address, telephone number, contact form, or stated walk-in policy. Put the exact email/phone and the conclusion in `备注` or `线下办理/注意事项`, for example: `无在线订位表单；请发邮件至 … 或致电 …` or `官网写明无需预约，可直接到店`.
+- Distinguish among `在线可预约`, `仅邮件/电话预约`, `无需预约（可直接到店）`, and `预约入口存在但当前无法稳定使用`. Do not label a restaurant as requiring reservation solely because third-party reviews recommend it.
+- If an official reservation page is listed in search results but cannot be opened or submitted, keep it as a secondary reference only, mark the limitation, and provide the verified contact method instead. Do not invent a booking URL or treat a generic map link as an online reservation channel.
+- Preserve practical details such as opening hours, response expectations, walk-in queues, minimum spend, deposits, cancellation rules, and language limitations when they are stated by the venue. If the user asks to contact the restaurant, draft the message using the verified email/phone and the itinerary date, leaving unknown party size, time, and guest name as explicit placeholders.
+
 ## Output expectations
 
 - Report the number of source items/rows and call out any ambiguous transcription.

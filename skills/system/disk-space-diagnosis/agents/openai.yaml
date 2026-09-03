@@ -1,0 +1,4 @@
+interface:
+  display_name: "Disk Space Diagnosis"
+  short_description: "Explain large files and optimize storage safely"
+  default_prompt: "Use $disk-space-diagnosis to analyze Windows disk usage and explain the largest causes without changing anything."

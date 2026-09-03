@@ -7,6 +7,7 @@
 ### Travel
 
 - `skills/travel/attraction-itinerary-excel`：从旅行行程截图或文档中逐条提取地点，核验票务与开放时间，并生成包含人民币估算和来源链接的完整 Excel。
+- `skills/travel/map-itinerary-visualizer`：在地图上定位行程地点，按日期规划访问顺序，并生成带标记、箭头和图例的路线图。
 
 ### System
 

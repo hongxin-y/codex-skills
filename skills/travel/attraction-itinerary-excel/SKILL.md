@@ -37,6 +37,17 @@ Use this skill when the user provides a travel itinerary image/document and asks
 - If an official reservation page is listed in search results but cannot be opened or submitted, keep it as a secondary reference only, mark the limitation, and provide the verified contact method instead. Do not invent a booking URL or treat a generic map link as an online reservation channel.
 - Preserve practical details such as opening hours, response expectations, walk-in queues, minimum spend, deposits, cancellation rules, and language limitations when they are stated by the venue. If the user asks to contact the restaurant, draft the message using the verified email/phone and the itinerary date, leaving unknown party size, time, and guest name as explicit placeholders.
 
+## Dress-code and visitor-etiquette handling
+
+- Check dress-code requirements for every source item, including attractions, religious buildings, museums, government buildings, theatres, cruises, restaurants, cafés, hotels, bridges, parks, streets, and transport points. Do not limit this check to ticketed attractions.
+- Search official visitor rules, code-of-conduct, FAQ, ticket, and visitor-information pages using terms such as `dress code`, `appropriate clothing`, `attire`, `clothing`, `visitor rules`, and local-language equivalents. For religious venues, also search for shoulder/knee coverage and worship etiquette.
+- Classify the result explicitly as `有明确要求`, `有宗教场所礼仪要求`, `有正式参观要求`, `建议整洁/优雅，无严格要求`, or `未发现特殊要求`. Never convert a general travel blog recommendation into a mandatory rule.
+- For an official rule, preserve the actionable details: who it applies to, required coverage or garment length, prohibited attire, whether entry can be refused, and whether the rule applies to worship services, tours, performances, or only certain areas.
+- For restaurants and cafés, search for an official dress-code statement separately from reservation information. If none exists, write `未发现官方 dress code` and give a modest context-based suggestion only when useful (for example, `smart casual` for fine dining or a hotel café). Do not invent a formal requirement.
+- For outdoor, public, bridge, park, street, or transport entries, record `无特殊要求` unless an event or venue rule states otherwise; practical weather, footwear, sun, or safety advice belongs in the note, not in the mandatory requirement field.
+- If no official dress-code page is found, distinguish `未发现官方要求` from `确认无需特殊着装`. Cite the page used for the check when available and keep uncertainty visible in `备注` or `着装核验备注`.
+- Add dedicated workbook columns `着装要求` and `着装核验备注` when the user asks for attire guidance. Keep one row per source item and update both columns consistently if later research changes the conclusion.
+
 ## Output expectations
 
 - Report the number of source items/rows and call out any ambiguous transcription.

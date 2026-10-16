@@ -18,7 +18,10 @@ Analyze Windows storage pressure as a read-only investigation. The default deliv
 ## Investigation workflow
 
 1. Establish the target volume(s): capacity, used space, free space, and free percentage. If the user did not name a drive, ask or use the drive implicated by the complaint; do not scan unrelated volumes unnecessarily.
-2. Measure top-level directories and large files with read-only filesystem queries. Exclude reparse points/junctions where possible to avoid double-counting; note inaccessible paths and scan limitations.
+2. Measure top-level directories and large files with read-only filesystem queries. Exclude reparse points/junctions where possible to avoid double-counting; note inaccessible paths and scan limitations. Treat a scan as incomplete unless every target top-level directory has either a verified total or an explicitly recorded failure/timeout.
+   - Use a two-pass scan for each target volume: first enumerate immediate children, then measure each child independently, recursively splitting unusually large or slow children. Do not rely on one monolithic recursive scan of the whole volume.
+   - Maintain a coverage ledger containing every top-level path, measured size/status, elapsed time, and whether the result is complete. If a command times out, returns partial output, or is stopped by an execution limit, mark that path `incomplete` and continue with smaller subtrees until its material contribution is accounted for.
+   - Reconcile measured child totals against the volume's used space before ranking findings. A large unexplained residual, or a directory omitted because it was slow, must be reported and investigated; never present a partial ranking as a complete disk diagnosis.
 3. Attribute space by category:
    - user data: documents, downloads, media, game saves, project files;
    - application data: caches, logs, browser profiles, package stores, chat attachments;
@@ -36,7 +39,7 @@ Analyze Windows storage pressure as a read-only investigation. The default deliv
 
 ## Commands and collection guidance
 
-Use PowerShell or equivalent read-only commands. Prefer `Get-PSDrive`, `Get-ChildItem`, `Measure-Object`, and CIM queries. Avoid broad recursive scans when a targeted scan is enough, and handle access-denied errors without retry loops. For large-file reports include full path, size in GB/MB, and last-write time. For folder totals, make the counting method clear and warn that protected or linked content may be omitted.
+Use PowerShell or equivalent read-only commands. Prefer `Get-PSDrive`, `Get-ChildItem`, `Measure-Object`, and CIM queries. Avoid broad recursive scans when a targeted scan is enough, and handle access-denied errors without retry loops. For large-file reports include full path, size in GB/MB, and last-write time. For folder totals, make the counting method clear and warn that protected or linked content may be omitted. Prefer bounded, per-subtree measurements over a single unbounded recursive walk. Record timeouts, access-denied paths, reparse-point exclusions, and any residual between the volume total and attributed folders; a timeout is a scan limitation, not evidence that the path is empty or small.
 
 For purpose attribution, use read-only evidence where practical: file extensions and names, parent/child structure, last-write patterns, installed application metadata, service/process names, and Windows ownership signals. Do not execute unknown binaries, inspect private message contents, or assume that a vendor-named folder is disposable. Read [references/decision-guide.md](references/decision-guide.md) when interpreting common Windows/application paths or when the user asks for an optimization plan.
 
@@ -56,6 +59,8 @@ These checks are diagnostic only. Any command that sets CIM properties, edits th
 Lead with the result: total capacity, used/free space, and the main causes. Then provide a compact table with:
 
 `Priority | Location | Size | What it is/does | Why it grew | Reclaimable estimate | Supported handling | Risk`
+
+Include a brief `Coverage and limitations` note naming any unmeasured, timed-out, access-denied, or reparse-point paths and the residual space not yet attributed. Do not claim the largest causes or complete coverage until the slowest material top-level directories have been split and measured.
 
 For every high-impact item, include a short explanation covering its dependency and likely consequence of cleanup. Do not merely repeat the path and size.
 

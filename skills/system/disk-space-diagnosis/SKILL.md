@@ -34,6 +34,8 @@ Analyze Windows storage pressure as a read-only investigation. The default deliv
 6. Identify the purpose of every material finding, not just its size. Use path components, extensions, timestamps, known application ownership, read-only metadata, and (when available) installed-app or service associations. Do not claim a purpose with high confidence from a folder name alone; label it inferred or unknown when evidence is weak.
 7. Classify each finding by content type (user data, application data, cache, log, installer/update payload, build/package cache, system file, or unknown), supported handling, reversibility, and risk. System-managed and automatic allocations are always **high risk / confirmation required**.
 8. For each large item, explain why it may be large or growing, what functionality depends on it, what happens after cleanup, and the supported cleanup method. Prefer an application's own storage/cache controls, Windows Storage/Disk Cleanup, an uninstaller, or a vendor tool over manual deletion. Never turn "cache" into an unconditional delete recommendation: verify whether it contains downloads, offline data, thumbnails, shader caches, logs, or user-created content.
+   - For `C:\Windows\Installer`, do not propose deleting `.msi`/`.msp` files or the directory. Inventory it only for attribution; reclaim space through Windows Settings or the owning application's uninstaller/repair workflow. There is no generic safe delete operation for this cache.
+   - For `C:\Windows\WinSxS`, explain that Explorer size may include hard-linked files and that it is the component store. Use an elevated `DISM /Online /Cleanup-Image /AnalyzeComponentStore` for read-only analysis. Only after a fresh, explicit confirmation may a supported cleanup such as `DISM /Online /Cleanup-Image /StartComponentCleanup` or Windows Storage/Disk Cleanup be run; disclose that superseded update rollback options can be reduced. Never use direct deletion or recommend `/ResetBase` as routine cleanup.
 9. If the largest items are not suitable for deletion, produce an optimization plan from the remaining candidates. Select a combination of actions by expected reclaimable space, risk, reversibility, and user impact; show the estimated total range and which items would need the user's confirmation. Include non-deletion options such as moving user libraries or game libraries using supported app settings, changing download/cache locations, uninstalling unused software, reducing retention, or adjusting system allocations. Moving or changing locations is a mutation and still requires exact-target confirmation.
 10. Rank findings by likely reclaimable space, confidence, reversibility, and user impact. State when a folder is a cache that can regenerate, when it may contain user content, and when only an application or Windows-supported workflow should be used.
 
@@ -53,6 +55,10 @@ Get-CimInstance Win32_ComputerSystem | Select-Object AutomaticManagedPagefile
 ```
 
 These checks are diagnostic only. Any command that sets CIM properties, edits the registry, invokes cleanup, or removes files is a mutation and must not run until the user confirms the exact proposed change.
+
+### Windows servicing directories
+
+Use [references/decision-guide.md](references/decision-guide.md) for the detailed decision path when `Windows\Installer`, `WinSxS`, or update servicing files are material findings. Keep analysis and mutation separate: `AnalyzeComponentStore` is read-only; `StartComponentCleanup`, Storage/Disk Cleanup, uninstallers, and vendor tools change state and require confirmation immediately before execution.
 
 ## Report format
 

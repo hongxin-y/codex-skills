@@ -19,6 +19,28 @@ Use this reference only when a scan needs purpose attribution or a fallback opti
 | crash dumps, restore points, shadow copies | Diagnostics and rollback | Windows cleanup/system protection controls | Deleting reduces recovery/debugging capability |
 | VM/container images, WSL distributions, emulator data | Virtualized operating systems or disks | Tool-specific export/remove/relocate workflow | Can contain an entire environment; treat as user data |
 
+## Windows servicing directories
+
+### `Windows\\Installer`
+
+Treat this as an application-servicing cache, not disposable temporary data. It contains Windows Installer packages (`.msi`) and patches (`.msp`) used to repair, update, or uninstall software. Do not delete individual files or the directory based on age, random-looking names, or apparent duplication. The supported path is to uninstall unused applications from Windows Settings or the owning vendor's uninstaller, and to use the application's repair/update workflow when appropriate. There is no generic safe cleanup command for orphaned Installer files; third-party scanners are not a default recommendation because a false positive can break future servicing.
+
+### `Windows\\WinSxS`
+
+Treat this as the Windows component store. Its apparent Explorer size can be inflated by hard links, so report the measurement method and avoid promising that the displayed size is reclaimable. For diagnosis, use an elevated, read-only analysis:
+
+```powershell
+DISM /Online /Cleanup-Image /AnalyzeComponentStore
+```
+
+If the analysis reports reclaimable superseded components and the user explicitly confirms the exact cleanup, use a supported Windows operation such as:
+
+```powershell
+DISM /Online /Cleanup-Image /StartComponentCleanup
+```
+
+or Windows Storage/Disk Cleanup with **Windows Update Cleanup** selected. Explain that cleanup can remove superseded update payloads and reduce rollback options. Do not directly remove files from `WinSxS`, and do not use `/ResetBase` as routine cleanup: it can permanently remove the ability to uninstall existing updates and requires a stronger confirmation.
+
 ## Decision order
 
 1. If it is clearly user data or an application-owned database, recommend review/backup and an app-supported workflow, not direct deletion.

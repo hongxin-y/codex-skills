@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0f172a"/>
+  <text x="48" y="58" fill="#f8fafc" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="28" font-weight="700">磁盘诊断示例 · C:\ 主要占用与清理路径</text>
+  <text x="48" y="92" fill="#94a3b8" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16">示例数据（已脱敏/用于说明输出结构，不代表实时扫描结果）</text>
+  <rect x="48" y="124" width="1104" height="74" rx="10" fill="#1e293b"/>
+  <text x="72" y="154" fill="#cbd5e1" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16">C:\ 总容量</text>
+  <text x="72" y="181" fill="#f8fafc" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">199.08 GiB</text>
+  <text x="340" y="154" fill="#cbd5e1" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16">已用 / 可用</text>
+  <text x="340" y="181" fill="#f8fafc" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="23" font-weight="700">180.20 / 18.88 GiB</text>
+  <text x="720" y="154" fill="#cbd5e1" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16">本次结论</text>
+  <text x="720" y="181" fill="#fbbf24" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="20" font-weight="700">先处理应用缓存，再处理系统维护项</text>
+
+  <rect x="48" y="224" width="1104" height="54" rx="8" fill="#334155"/>
+  <text x="72" y="258" fill="#e2e8f0" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">位置 / 大小</text>
+  <text x="455" y="258" fill="#e2e8f0" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">内容与风险</text>
+  <text x="820" y="258" fill="#e2e8f0" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">推荐清理路径</text>
+
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15">
+    <rect x="48" y="288" width="1104" height="78" rx="8" fill="#172554"/>
+    <text x="72" y="319" fill="#bfdbfe" font-weight="700">NVIDIA App\UpdateFramework\ota-artifacts</text>
+    <text x="72" y="345" fill="#f8fafc" font-size="19" font-weight="700">7.32 GB · 可再生成</text>
+    <text x="455" y="319" fill="#dbeafe">更新下载包；删除整个框架可能破坏更新状态</text>
+    <text x="455" y="345" fill="#93c5fd">中风险 · 需先完成更新并退出 App</text>
+    <text x="820" y="319" fill="#bfdbfe">App 设置关闭自动下载（不清旧包）</text>
+    <text x="820" y="345" fill="#bfdbfe">手动仅删 ota-artifacts，随后核验 App 更新</text>
+
+    <rect x="48" y="378" width="1104" height="78" rx="8" fill="#422006"/>
+    <text x="72" y="409" fill="#fed7aa" font-weight="700">C:\Windows\Installer</text>
+    <text x="72" y="435" fill="#f8fafc" font-size="19" font-weight="700">14.3 GB · 系统安装缓存</text>
+    <text x="455" y="409" fill="#ffedd5">MSI/MSP 供修复、更新和卸载使用</text>
+    <text x="455" y="435" fill="#fdba74">高风险 · 不可直接删除文件</text>
+    <text x="820" y="409" fill="#fed7aa">Windows 设置 → 应用 → 已安装的应用</text>
+    <text x="820" y="435" fill="#fed7aa">卸载不用的软件或执行 Repair，不碰目录</text>
+
+    <rect x="48" y="468" width="1104" height="78" rx="8" fill="#3f1d5a"/>
+    <text x="72" y="499" fill="#e9d5ff" font-weight="700">C:\Windows\WinSxS</text>
+    <text x="72" y="525" fill="#f8fafc" font-size="19" font-weight="700">24.5 GB · 组件存储</text>
+    <text x="455" y="499" fill="#f3e8ff">Explorer 大小可能包含硬链接，不能按文件夹大小直删</text>
+    <text x="455" y="525" fill="#d8b4fe">高风险 · 清理可能减少更新回滚选项</text>
+    <text x="820" y="499" fill="#e9d5ff">管理员终端：DISM Analyze（只读）</text>
+    <text x="820" y="525" fill="#e9d5ff">确认后再 StartComponentCleanup，完成后复核空间</text>
+  </g>
+
+  <rect x="48" y="578" width="1104" height="92" rx="10" fill="#1e293b"/>
+  <text x="72" y="610" fill="#94a3b8" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15">报告结尾会明确写出：</text>
+  <text x="72" y="638" fill="#f8fafc" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16">① 哪些可在 App 内清理  ② 哪些只能走 Windows/厂商流程  ③ 哪些不应直接删除</text>
+  <text x="72" y="662" fill="#fbbf24" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">④ 未经用户对精确目标确认，不执行删除</text>
+</svg>

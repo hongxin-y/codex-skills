@@ -18,6 +18,15 @@ Use this skill when the user provides a travel itinerary image/document and asks
 7. Use the spreadsheet skill and `@oai/artifact-tool` for authoring. Add a formatted table, freeze the header row, wrap long text, set readable widths, and keep plain-text URLs in the source column. Save the final `.xlsx` under the conversation's `outputs` directory.
 8. Verify exact fidelity in both directions: every source item has exactly one corresponding Excel row (including explicit duplicates), and every Excel row can be traced back to a source item. Report any mismatch and stop before export until resolved. Check that no location is missing, added, renamed into a different place, or accidentally split/merged. Inspect key ranges, scan for formula errors, render the sheet once, and fix clipped headers or unreadable rows before delivery.
 
+## Date assignment when the source omits dates
+
+- Treat dates explicitly supplied by the user as locked. Never move an item with an explicit date without recording the reason and preserving the original date in `原文条目` or `备注`.
+- If the source gives a trip window but does not assign every place to a day, assign dates before researching prices. Cluster nearby places geographically, then fit the clusters to opening hours, reservation windows, realistic visit duration, cross-city travel time, and fixed arrival/departure times.
+- Keep the original source order in `原文条目`; use `日期` plus `交通/规划` for the recommended day and visit sequence. Do not create extra attractions to fill a day.
+- Put the assignment rationale in `备注`, for example: `日期为建议分配：与同区域景点步行串联；受16:45离开时间约束`. Mark uncertain assignments as `建议日期，需用户确认` rather than presenting them as user-provided facts.
+- Recheck capacity after assignment: no day may exceed the available sightseeing hours, venue opening hours, reservation times, or required transfer buffer. For a day with a fixed departure, work backward from the departure point and include a conservative arrival buffer.
+- Verify that every source item has one date after assignment and that the date distribution is reflected consistently in any map or route output.
+
 ## Search and verification method
 
 - Search each place in at least two forms: an English name plus `official tickets`/`opening hours`, and the local-language name plus the local terms for tickets and opening hours (for example, Hungarian `jegyárak`, `jegyvásárlás`, and `nyitvatartás`). Use the venue name, city, and year when prices may be seasonal.
@@ -54,3 +63,15 @@ Use this skill when the user provides a travel itinerary image/document and asks
 - State the exact source-item count and Excel-row count; they must match unless the user explicitly requested a split or merge.
 - Include official booking links where tickets are required; use a map or official tourism link for free public places when practical.
 - Keep research caveats visible in the workbook rather than hiding them in chat.
+
+## Map deliverable verification
+
+- When maps are part of the deliverable, perform post-export visual QA on every PNG, not just the Excel workbook: inspect the full geographic extent, all numbered points, arrow direction, legend, and image boundaries.
+- Confirm that the legend is outside the map viewport and does not hide route points or roads; confirm that no tile is blank, blocked, or an HTTP error placeholder.
+- Keep the map route order, segment modes, and distances consistent with the Excel `交通/规划` and `备注` cells. Regenerate any map that fails these checks before delivery.
+
+## Route planning fields
+
+- When the request includes a map or itinerary route, add route-planning details to the relevant `交通/规划` or `备注` cells: recommended order, segment distance, mode, and operator/source link.
+- Apply the same practical threshold used by the map skill: segments up to and including 3 km are walking; segments over 3 km require a public-transport search and an explicit mode (metro, tram, bus, train, or shuttle).
+- Keep the Excel route details consistent with the map legend. If the map labels a segment as public transport, the workbook must name the same mode and preserve any ticket or timetable caveat.

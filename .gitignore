@@ -2,6 +2,7 @@
 *.xlsx
 *.png
 *.ndjson
+work/
 
 # OS/editor files
 .DS_Store

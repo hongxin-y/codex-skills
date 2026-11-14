@@ -7,5 +7,7 @@ Use these prompts when checking that the visual decision layer is actually being
 3. A multi-page product after a shared token change. Require an art-direction consistency review, an anti-template review and regression checks across all impacted pages.
 4. A requested glassmorphism redesign of a data-heavy table. Require the agent to evaluate the task and accessibility risks, constrain translucency to appropriate layers or reject it, and explain the repair.
 5. A page with long labels, missing values, errors, permissions and narrow width. Require visual review of all states, not only the happy path.
+6. A three-pane editor with optional inspector, reference preview, command bar and assistant. Require space roles, layout alternative comparison, V0–V4 lifecycle, pin/remember policy, collapse prohibitions, responsive transformation and floating occlusion budget.
+7. A “simple” settings page with collapsible sections and validation errors. Require every section to have a visibility and state-restoration decision, and require the agent to mark any non-applicable field explicitly instead of skipping it.
 
-Pass condition: the response shows the visual context, rationale, contract, component derivation, stress cases and review findings. A palette or component list alone is insufficient.
+Pass condition: the response shows the visual context, rationale, contract, component derivation, spatial roles, lifecycle/persistence table, responsive and occlusion decisions, stress cases and review findings. A palette or component list alone is insufficient.

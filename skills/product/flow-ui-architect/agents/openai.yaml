@@ -1,4 +1,4 @@
 interface:
   display_name: "Flow UI Architect"
   short_description: "Design, review and build coherent task-first UI"
-  default_prompt: "Use $flow-ui-architect and follow its required step ledger, Art Direction Gate and reference routing to turn this business scenario into a coherent UI, including page element blueprints and cross-page Review/Repair when multiple pages are involved."
+  default_prompt: "Use $flow-ui-architect. Follow every required step in its ledger and read/apply each routed reference before making the decision. Complete the Art Direction Gate and Spatial Orchestration Gate before detailed layout or code: record bounded user-perception hypotheses, visual grammar, space roles, layout skeleton, V0–V4 lifecycle, collapse/expand, persistence, responsive transformation, state restoration and occlusion/focus budgets for every major region, panel, floating element and feedback layer. Do not skip a decision because the page is simple or a component already exists. Include page element blueprints, realistic-content and anti-AI review, and cross-page Review/Repair when multiple pages are involved."

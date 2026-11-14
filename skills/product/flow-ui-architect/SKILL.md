@@ -37,18 +37,20 @@ Run this protocol for DESIGN, BUILD and REVIEW. Keep a visible step ledger in th
 | 1. Task model | Actors, objects, permissions, outcomes and constraints | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
 | 2. Route model | Entry → locate → inspect → decide → act → feedback → recovery → continuation; Red Route map | `decision-rules.md` | DONE, N/A with reason, or BLOCKED |
 | 3. Page scope and blueprint | Page inventory, or a compact Page Element Blueprint for a single page | `multi-page-design.md`, `design-output-template.md` | DONE, N/A with reason, or BLOCKED |
-| 4. Art direction | Visual Context Profile, candidate directions or inherited contract, selected Visual Grammar Contract | `visual-direction-selection.md`, `art-direction-catalog.md`, `design-system-profiles.md` when a system foundation exists | DONE, N/A with reason, or BLOCKED |
-| 5. Layout and interaction | Compared layout choice, component ownership and interaction states | `layout-patterns.md`, `interaction-patterns.md`, `component-style-grammar.md` | DONE, N/A with reason, or BLOCKED |
-| 6. Cost and continuity | P/K/D/C/W/E/M analysis, preserved context and handoffs | `operation-cost.md`, `flow-continuity.md` | DONE, N/A with reason, or BLOCKED |
-| 7. Visual system | Hierarchy, density, tokens, responsive transformations, component expression and accessibility decisions | `color-and-tokens.md`, `color-strategy-catalog.md`, `typography-and-grid.md`, `surface-shape-depth.md`, `imagery-iconography-motion.md`, `visual-quality.md` | DONE, N/A with reason, or BLOCKED |
-| 8. Review and repair | Findings, repairs, impacted routes, visual consistency and regression checks | `review-repair-protocol.md`, `art-direction-review.md`, `anti-ai-template-review.md`, `validation-checklist.md` | DONE, N/A with reason, or BLOCKED |
-| 9. Delivery | Requested design, implementation or review result with limitations | `implementation-playbook.md` when building; `design-output-template.md` otherwise | DONE, N/A with reason, or BLOCKED |
+| 4. Art direction | Visual Context Profile, user-perception hypotheses, candidate directions or inherited contract, selected Visual Grammar Contract | `visual-direction-selection.md`, `user-perception-and-visual-decisions.md`, `art-direction-catalog.md`, `design-system-profiles.md` when a system foundation exists | DONE, N/A with reason, or BLOCKED |
+| 5. Spatial orchestration | Space roles, layout skeleton, lifecycle, visibility, persistence, responsive transformation and occlusion budget | `spatial-orchestration.md`, `component-morphology.md`, `visibility-persistence.md`, `responsive-transformation.md`, `floating-ui-and-occlusion.md`; `workspace-layouts.md` when applicable | DONE, N/A with reason, or BLOCKED |
+| 6. Layout and interaction | Compared layout choice, component ownership and interaction states | `layout-patterns.md`, `interaction-patterns.md`, `component-style-grammar.md` | DONE, N/A with reason, or BLOCKED |
+| 7. Cost and continuity | P/K/D/C/W/E/M analysis, preserved context and handoffs | `operation-cost.md`, `flow-continuity.md` | DONE, N/A with reason, or BLOCKED |
+| 8. Visual system | Hierarchy, density, tokens, responsive transformations, component expression and accessibility decisions | `color-and-tokens.md`, `color-strategy-catalog.md`, `typography-and-grid.md`, `surface-shape-depth.md`, `imagery-iconography-motion.md`, `visual-quality.md` | DONE, N/A with reason, or BLOCKED |
+| 9. Review and repair | Findings, repairs, impacted routes, spatial/dynamic behavior, visual consistency and regression checks | `review-repair-protocol.md`, `art-direction-review.md`, `anti-ai-template-review.md`, `perceived-quality.md`, `validation-checklist.md` | DONE, N/A with reason, or BLOCKED |
+| 10. Delivery | Requested design, implementation or review result with limitations | `implementation-playbook.md` when building; `design-output-template.md` otherwise | DONE, N/A with reason, or BLOCKED |
 
 Rules for the ledger:
 
 - Do not mark a step DONE with a generic sentence. Record the decision, the artifact, and the reference rule that changed the decision.
-- Do not start detailed layout or code while Steps 0–4 are incomplete. BUILD must inspect the repository before implementation; REVIEW must record observed evidence before proposing repairs.
+- Do not start detailed layout or UI code while Steps 0–5 are incomplete. BUILD must inspect the repository before implementation; REVIEW must record observed evidence before proposing repairs. BUILD must not write UI code until Steps 0–9 are DONE or explicitly `N/A — <reason>` / `BLOCKED — <resolution plan>`; a blocked decision cannot be silently skipped.
 - If a step does not apply, write `N/A — <specific reason>` and continue only after checking that later steps do not depend on it. If it is blocked, state the blocker and either ask the smallest necessary question or continue with a labeled assumption when safe.
+- Every major region, panel, filter, floating element, assistant, feedback layer and responsive variant must receive a spatial role, visibility lifecycle, persistence rule, container choice, occlusion budget and state-restore decision. “Simple page”, “existing component” and “time pressure” are not valid reasons to omit a decision point.
 - After implementation or repair, rerun the affected steps against actual behavior. A design note, blueprint or paper review does not prove the UI works.
 - The final response must include the completed ledger, assumptions, unresolved limitations, changed files when applicable, and actual checks performed.
 
@@ -70,25 +72,33 @@ For multiple pages or connected product surfaces, the MULTI-PAGE DESIGN GATE bel
 
 ### Establish visual direction before styling
 
-Run the Art Direction Gate after the Page Element Blueprint and before detailed layout styling or code. **MUST READ and apply** [visual-direction-selection](references/visual-direction-selection.md). Use [art-direction-catalog](references/art-direction-catalog.md) when the repository or brand does not already establish a direction, and use [design-system-profiles](references/design-system-profiles.md) to separate interaction-system foundations from visual language. Record the Visual Context Profile, candidate comparison or inherited direction, selected Visual Grammar Contract and rejected alternatives in Step 4.
+Run the Art Direction Gate after the Page Element Blueprint and before detailed layout styling or code. **MUST READ and apply** [visual-direction-selection](references/visual-direction-selection.md) and [user-perception-and-visual-decisions](references/user-perception-and-visual-decisions.md). Use [art-direction-catalog](references/art-direction-catalog.md) when the repository or brand does not already establish a direction, and use [design-system-profiles](references/design-system-profiles.md) to separate interaction-system foundations from visual language. Record the Visual Context Profile, psychological hypotheses with observable signals and counter-risks, candidate comparison or inherited direction, selected Visual Grammar Contract and rejected alternatives in Step 4.
 
 Do not treat a palette, gradient, glass effect, font choice or component variant as an art direction. The direction must explain typography, grid, density, palette strategy, shape, surface/depth, imagery, iconography, motion and component expression as one system.
 
+### Orchestrate space and dynamic behavior before detailed layout
+
+Before choosing exact columns, cards, panels or floating controls, **MUST READ and apply** [spatial-orchestration](references/spatial-orchestration.md), [component-morphology](references/component-morphology.md), [visibility-persistence](references/visibility-persistence.md), [responsive-transformation](references/responsive-transformation.md) and [floating-ui-and-occlusion](references/floating-ui-and-occlusion.md). Read [workspace-layouts](references/workspace-layouts.md) for workbenches, editors, monitoring, maps, complex forms or other multi-region surfaces.
+
+Record the page's space roles, selected layout skeleton, rejected alternative, spatial bottleneck, lifecycle level (V0–V4) for every major region, collapse/expand trigger, auto-collapse prohibition, pin/remember behavior, responsive transformation, state restoration and floating occlusion budget. If a field is not applicable, write `N/A — <specific reason>`; never skip it.
+
+Preserve task-critical state, current focus, unsaved input, active errors, repeated comparison and user-pinned preferences during collapse or transformation. Use `resize → compact → rail → drawer/sheet → dedicated page` before hiding content. When a container is too small, escalate `Tooltip → Popover → Drawer/Panel → Dedicated Page` according to content complexity; do not solve every pressure case with a modal.
+
 ### Choose layout and interaction patterns
 
-Select workbench, queue, master-detail, search/results, dashboard, form, wizard, editor, timeline, feed, comparison or a justified hybrid. Compare alternatives. Use inline actions, drawers, modals, tabs, sticky bars, FABs and other controls only when they fit the job. **MUST READ and apply** [layout-patterns](references/layout-patterns.md), [interaction-patterns](references/interaction-patterns.md) and [component-style-grammar](references/component-style-grammar.md), then record the chosen pattern, component variants and rejected alternatives in Step 5. Derive variants from the Visual Grammar Contract; do not select them independently because they are fashionable.
+Select workbench, queue, master-detail, search/results, dashboard, form, wizard, editor, timeline, feed, comparison or a justified hybrid. Compare alternatives. Use inline actions, drawers, modals, tabs, sticky bars, FABs and other controls only when they fit the job. **MUST READ and apply** [layout-patterns](references/layout-patterns.md), [interaction-patterns](references/interaction-patterns.md) and [component-style-grammar](references/component-style-grammar.md), then record the chosen pattern, component variants and rejected alternatives in Step 6. Derive variants from the Visual Grammar Contract; do not select them independently because they are fashionable.
 
 ### Optimize cost and continuity
 
-Compare P/K/D/C/W/E/M: pointing, input, decisions, context switches, waiting, error recovery and memory burden. Preserve search, filters, sort, selection, scroll, drafts and next-task context where relevant. **MUST READ and apply** [operation-cost](references/operation-cost.md) and [flow-continuity](references/flow-continuity.md), then record the cost and handoff decisions in Step 5.
+Compare P/K/D/C/W/E/M: pointing, input, decisions, context switches, waiting, error recovery and memory burden. Preserve search, filters, sort, selection, scroll, drafts and next-task context where relevant. **MUST READ and apply** [operation-cost](references/operation-cost.md) and [flow-continuity](references/flow-continuity.md), then record the cost and handoff decisions in Step 7.
 
 ### Build the visual system
 
-Define hierarchy, density, typography, spacing, semantic color tokens, surfaces and responsive transformations. **MUST READ and apply** [color-and-tokens](references/color-and-tokens.md), [color-strategy-catalog](references/color-strategy-catalog.md), [typography-and-grid](references/typography-and-grid.md), [surface-shape-depth](references/surface-shape-depth.md), [imagery-iconography-motion](references/imagery-iconography-motion.md) and [visual-quality](references/visual-quality.md), then record the visual and accessibility decisions in Step 7. Run the Real-content Stress Test before marking the step complete.
+Define hierarchy, density, typography, spacing, semantic color tokens, surfaces and responsive transformations. **MUST READ and apply** [color-and-tokens](references/color-and-tokens.md), [color-strategy-catalog](references/color-strategy-catalog.md), [typography-and-grid](references/typography-and-grid.md), [surface-shape-depth](references/surface-shape-depth.md), [imagery-iconography-motion](references/imagery-iconography-motion.md) and [visual-quality](references/visual-quality.md), then record the visual and accessibility decisions in Step 8. Run the Real-content Stress Test before marking the step complete.
 
 ### Deliver and validate
 
-For DESIGN, provide an actionable blueprint or prototype. For BUILD, implement and run available checks. For REVIEW, prioritize findings and repairs. **MUST READ and apply** [design-output-template](references/design-output-template.md), [implementation-playbook](references/implementation-playbook.md) when building, [review-repair-protocol](references/review-repair-protocol.md), [art-direction-review](references/art-direction-review.md) and [anti-ai-template-review](references/anti-ai-template-review.md) when reviewing or repairing, and [validation-checklist](references/validation-checklist.md) before delivery.
+For DESIGN, provide an actionable blueprint or prototype. For BUILD, implement and run available checks. For REVIEW, prioritize findings and repairs. **MUST READ and apply** [design-output-template](references/design-output-template.md), [implementation-playbook](references/implementation-playbook.md) when building, [review-repair-protocol](references/review-repair-protocol.md), [art-direction-review](references/art-direction-review.md), [anti-ai-template-review](references/anti-ai-template-review.md), [perceived-quality](references/perceived-quality.md) and [validation-checklist](references/validation-checklist.md) before delivery. Review Task fit and Accessibility first, then Semantic fit, Hierarchy, Authenticity, Coherence, Craft, Restraint and Distinctiveness; do not compress this into an unsupported total score.
 
 ## Mandatory MULTI-PAGE DESIGN GATE
 
@@ -151,6 +161,7 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 - [task-modeling](references/task-modeling.md): actors, objects, permissions and task graph.
 - [decision-rules](references/decision-rules.md): task priority and Red Routes.
 - [visual-direction-selection](references/visual-direction-selection.md): Visual Context Profile, candidate directions and Visual Grammar Contract.
+- [user-perception-and-visual-decisions](references/user-perception-and-visual-decisions.md): bounded psychological hypotheses, visual responses and counter-risks.
 - [art-direction-catalog](references/art-direction-catalog.md): visual languages, fit and anti-pattern risks.
 - [layout-patterns](references/layout-patterns.md): task-to-layout selection.
 - [multi-page-design](references/multi-page-design.md): per-page element blueprints and page contracts.
@@ -165,9 +176,16 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 - [surface-shape-depth](references/surface-shape-depth.md): surfaces, radius, borders, elevation and translucency.
 - [imagery-iconography-motion](references/imagery-iconography-motion.md): purposeful imagery, icon grammar and motion.
 - [design-system-profiles](references/design-system-profiles.md): what to borrow from mature systems without copying their theme.
+- [spatial-orchestration](references/spatial-orchestration.md): space roles, layout skeletons, space budgets and mandatory spatial records.
+- [component-morphology](references/component-morphology.md): component roles, containers and morphology choices.
+- [visibility-persistence](references/visibility-persistence.md): V0–V4 lifecycle, collapse rules, pinning and state restoration.
+- [responsive-transformation](references/responsive-transformation.md): semantic responsive transformations and state preservation.
+- [floating-ui-and-occlusion](references/floating-ui-and-occlusion.md): floating layers, focus, keyboard and occlusion budget.
+- [workspace-layouts](references/workspace-layouts.md): examples for complex workspaces and multi-region products.
 - [visual-quality](references/visual-quality.md): art direction and hierarchy.
 - [art-direction-review](references/art-direction-review.md): art-direction consistency and repair lens.
 - [anti-ai-template-review](references/anti-ai-template-review.md): template diagnostic and repair rules.
+- [perceived-quality](references/perceived-quality.md): quality dimensions, evidence-based anti-AI tests and repair priority.
 - [implementation-playbook](references/implementation-playbook.md): repository-first implementation.
 - [design-output-template](references/design-output-template.md): deliverable structure.
 - [validation-checklist](references/validation-checklist.md): acceptance criteria.
@@ -186,4 +204,4 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 
 ## Final response contract
 
-Show concrete layouts and interactions, not only design philosophy. Include the completed execution ledger and the references read/applied. For DESIGN, show the Visual Context Profile, candidate comparison or inherited direction, selected Visual Grammar Contract, component derivation, realistic-content stress test and Art Direction Review. For multi-page DESIGN, also show page element blueprints, shared rules, important cross-page transitions, and meaningful Review/Repair findings. For BUILD, report changed files and actual tests. For REVIEW, report observed evidence, repairs and rerun checks. State assumptions and unresolved limitations truthfully; never replace a missing artifact with a claim that the step was followed.
+Show concrete layouts and interactions, not only design philosophy. Include the completed execution ledger and the references read/applied. For DESIGN, show the Visual Context Profile, candidate comparison or inherited direction, selected Visual Grammar Contract, component derivation, spatial role map, layout skeleton, lifecycle/persistence table, responsive transformation, floating occlusion budget, realistic-content stress test and Art Direction Review. For multi-page DESIGN, also show page element blueprints, shared rules, important cross-page transitions, and meaningful Review/Repair findings. For BUILD, report changed files and actual tests. For REVIEW, report observed evidence, repairs and rerun checks. State assumptions and unresolved limitations truthfully; never replace a missing artifact with a claim that the step was followed.

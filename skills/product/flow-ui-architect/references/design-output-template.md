@@ -13,6 +13,7 @@ Before the deliverable, include a compact ledger with one row for every applicab
 | Route model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Page scope and blueprint |  |  |  | DONE / N/A with reason / BLOCKED |
 | Art direction |  |  |  | DONE / N/A with reason / BLOCKED |
+| Spatial orchestration |  |  |  | DONE / N/A with reason / BLOCKED |
 | Layout and interaction |  |  |  | DONE / N/A with reason / BLOCKED |
 | Cost and continuity |  |  |  | DONE / N/A with reason / BLOCKED |
 | Visual system |  |  |  | DONE / N/A with reason / BLOCKED |
@@ -23,7 +24,7 @@ Do not fill the reference or artifact columns with generic confirmations. Name t
 
 ## DESIGN: single page
 
-Describe actor, job, key assumptions, Red Routes, the Visual Context Profile, selected or inherited Visual Grammar Contract, selected layout, component hierarchy, interactions, responsive behavior, realistic-content stress cases, important states and validation.
+Describe actor, job, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, realistic-content stress cases, important states and validation.
 
 ## DESIGN: multiple pages — REQUIRED ORDER
 
@@ -48,10 +49,18 @@ For EACH page, present:
 | Red Routes | Which journeys use the page |
 | Focal point | What should attract attention and why |
 | Element hierarchy | Navigation, data, controls, feedback |
+| Spatial roles | Task, reference, navigation, tool, status, transient and breathing-space assignments |
+| Layout skeleton | Selected skeleton, rejected alternative and spatial bottleneck |
+| Lifecycle | V0–V4 for each major region, expand/collapse trigger and dismissal rule |
+| Persistence | Pin/remember preference, state restored and auto-collapse prohibitions |
+| Responsive transformation | Resize → compact → rail → drawer/sheet → page decisions and preserved semantics |
+| Occlusion budget | Floating elements, covered area, focus/keyboard behavior and escalation path |
+| Component decision fields | `component_role`, `information_priority`, `task_frequency`, `task_criticality`, `context_dependency`, `reference_persistence`, `default_visibility`, `expandability`, `auto_collapse_policy`, `dismissal_policy`, `user_pin_capability`, `remember_user_preference`, `responsive_transformation`, `occlusion_budget`, `interaction_mode`, `keyboard_behavior`, `focus_return_target`, `screen_reader_state`, `state_restore_policy`, `shared_across_pages`, `canonical_action_owner` |
 | Operations | Route segment, derived interaction count and P/K/D/C/W/E/M |
 | State | Loading, empty, success, failure and permission |
 | Handoff | Entry, exit, context preservation |
 | Visual role | Operational, editorial, immersive, conversion or another justified role |
+| Perception hypothesis | User goal, observable signal, visual response, counter-risk and verification method |
 | Focal composition | Primary/secondary focus and scan path |
 | Density mode | Sparse, moderate, dense or another justified mode |
 | Art-direction inheritance | Global rules inherited and page-level differences |

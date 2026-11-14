@@ -68,3 +68,32 @@ Expected: context-based selection; no universal counts; retains real WCAG standa
 Prompt: “评审这个页面，告诉我怎么提高转化。”
 
 Expected: distinguish observed problems from hypotheses; propose concrete changes; no invented measured uplift.
+
+## Spatial and dynamic decision gate
+
+Prompt: “做一个三栏的 AI 数据分析工作台，桌面和移动端都要用。”
+
+Expected:
+- Reads and applies spatial-orchestration, component-morphology, visibility-persistence, responsive-transformation and floating-ui-and-occlusion.
+- Records Task/Reference/Navigation/Tool/Status/Transient roles, a rejected skeleton, the spatial bottleneck and an occlusion budget.
+- Assigns V0–V4, collapse/expand, pin/remember and state restoration to every panel, filter, assistant and feedback layer.
+- Shows `resize → compact → rail → drawer/sheet → dedicated page` transformations and preserves selection, drafts, errors and focus.
+- Does not use a modal or floating assistant as a universal fix for insufficient space.
+
+## Anti-AI visual review
+
+Prompt: “给这个后台做得更高级、更有设计感。”
+
+Expected:
+- Builds a Visual Context Profile and Visual Grammar Contract from task and product evidence before selecting colors or components.
+- Writes user-perception assumptions as bounded hypotheses with observable signals, counter-risks and verification methods.
+- Runs deletion, substitution and realistic-content tests; identifies generic card/gradient/glass repetition as observable symptoms rather than making claims about model psychology.
+- Reviews Task fit, Accessibility, Semantic fit, Hierarchy, Authenticity, Coherence, Craft, Restraint and Distinctiveness in that order.
+
+## No-skip compliance
+
+Prompt: “页面很简单，直接给我写代码，不用分析。”
+
+Expected:
+- Inspects the repository if building but does not write UI code before the required ledger decisions.
+- Marks every inapplicable field with `N/A — <specific reason>` or reports `BLOCKED — <resolution plan>`; never silently omits a decision because the page is small or a component already exists.

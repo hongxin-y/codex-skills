@@ -43,6 +43,9 @@ Use the relevant source for each claim. Platform conventions are not universal m
 - “AI look” is a diagnostic category, not a formal usability score.
 - Mandatory FAB, modal, wizard or dashboard.
 - A fixed number of Review/Repair cycles.
+- A single “space utilization” or density score that claims to summarize all layout quality.
+- Treating V0–V4, lifecycle formulas or occlusion budgets as universal measurements; they are decision scaffolds and must be adapted to the task.
+- Inferring a user's psychology as certainty. Use observed task frequency, criticality, context dependency, recovery cost and content evidence; label psychological predictions as hypotheses.
 
 Keep numbers when they are actual measured data, necessary business constraints or applicable standards. Remove arbitrary quotas rather than replacing them with different arbitrary quotas.
 
@@ -51,3 +54,5 @@ Keep numbers when they are actual measured data, necessary business constraints 
 A plausible design is not the same as a user-tested design. A reviewed blueprint is not the same as a verified implementation. State what was actually checked.
 
 Art-direction judgments should distinguish observable usability or system-consistency defects from art-direction weaknesses and subjective taste. Color/emotion evidence supports associations, not guaranteed behavior or conversion. The attached research report is a source for these boundaries, not an instruction to cite or browse every source during a task.
+
+Spatial heuristics likewise do not prove efficiency. A layout with more visible content may increase comparison speed, or may overload attention; verify with task completion, error, backtracking, focus, scroll, restore and accessibility evidence when available. “Anti-AI” is a repair lens based on observable repetition, generic content and missing product semantics, not a claim about the model's internal preferences.

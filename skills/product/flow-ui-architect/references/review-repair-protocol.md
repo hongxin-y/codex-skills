@@ -26,6 +26,21 @@ For every page, verify:
 
 Repair missing or misplaced elements before polishing.
 
+## Review lens: Spatial and dynamic behavior
+
+For every page and major floating element, verify:
+
+- Task, Reference, Navigation, Tool, Status, Transient and Breathing Space roles are explicit.
+- The layout skeleton protects the main task, preserves repeated reference and does not spend space evenly when task priority is uneven.
+- Each region has a V0–V4 lifecycle, trigger, dismissal policy, auto-collapse prohibition, pin/remember behavior and state restoration.
+- Responsive behavior transforms semantics in the order `resize → compact → rail → drawer/sheet → dedicated page` before hiding content.
+- Collapse never loses unsaved input, current focus, active errors, task-critical state, repeated comparison or user-pinned preferences.
+- Floating layers have a bounded occlusion budget and do not cover primary actions, focus, errors, keyboard paths or safe areas.
+- Tooltip, popover, panel, drawer, modal and page are used according to content complexity; the modal is not a universal space fix.
+- Long content, narrow widths, minimum text sizes, keyboard operation and screen-reader order were exercised.
+
+Repair lifecycle or container decisions before tuning spacing. A panel that must be reopened repeatedly is a persistence defect, not a user habit to ignore.
+
 ## Review lens: Cross-page architecture
 
 Compare ALL page blueprints and the shared contract:
@@ -72,6 +87,8 @@ Use [art-direction-review](art-direction-review.md) and [anti-ai-template-review
 - Findings distinguish usability defects, system inconsistencies, art-direction weaknesses and subjective taste.
 
 In BUILD mode, inspect actual code and exercise interactions. A specification review cannot substitute for implementation tests.
+
+Use [perceived-quality](perceived-quality.md) to classify Task fit, Accessibility, Semantic fit, Hierarchy, Authenticity, Coherence, Craft, Restraint and Distinctiveness. Repair in that order; use deletion, substitution and realistic-content tests to turn “AI味” into observable symptoms and concrete changes.
 
 ## Issue ledger
 

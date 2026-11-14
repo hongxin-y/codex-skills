@@ -6,7 +6,8 @@
 - [ ] Each required reference was read before the related decision was made.
 - [ ] Each DONE step has a concrete artifact, not a generic claim.
 - [ ] Each skipped step is marked N/A with a task-specific reason; blocked steps are reported honestly.
-- [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract and interaction contract were recorded.
+- [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract, spatial orchestration record and interaction contract were recorded.
+- [ ] BUILD did not write UI code until every required decision step was DONE or explicitly N/A/BLOCKED with a resolution plan.
 - [ ] REVIEW includes observed evidence, repairs and rerun checks when repairs were requested.
 
 ## Product and task
@@ -35,10 +36,22 @@
 - Are floating controls justified?
 - Are destructive actions safeguarded proportionately?
 
+## Spatial and dynamic behavior
+
+- [ ] Every major region has a Task, Reference, Navigation, Tool, Status, Transient or Breathing Space role.
+- [ ] The layout skeleton, rejected alternative and spatial bottleneck are recorded.
+- [ ] Every panel, filter, assistant, feedback layer and floating element has a V0–V4 lifecycle, trigger, dismissal rule and auto-collapse prohibition.
+- [ ] Pin/remember preferences and state restoration cover selection, filters, scroll, drafts, focus, errors and panel state where relevant.
+- [ ] Responsive transformation uses resize → compact → rail → drawer/sheet → dedicated page before hiding task-critical information.
+- [ ] Floating UI has an occlusion budget and does not cover task controls, focus, errors, keyboard paths or safe areas.
+- [ ] Hover/focus content is keyboard-triggerable, dismissible and hoverable; modal focus enters, traps, escapes and returns correctly.
+- [ ] Long content, narrow widths, keyboard input and screen-reader order were checked for every dynamic container.
+
 ## Visual and accessibility
 
 - Is there a coherent hierarchy and visual thesis?
 - Is there a documented Visual Context Profile and selected art direction or inherited visual contract?
+- Are psychological assumptions written as bounded hypotheses with observable signals, counter-risks and verification methods?
 - Were materially different candidate directions compared when the visual direction was open?
 - Does the Visual Grammar Contract cover typography, grid, density, palette, shape, surface/depth, imagery, iconography, motion and component variants?
 - Were component styles derived from that contract rather than chosen independently?
@@ -50,6 +63,8 @@
 - Is keyboard navigation functional?
 - Are applicable WCAG contrast requirements met?
 - Does mobile transform the workflow appropriately?
+- [ ] Does the visual decision survive realistic content without generic card/gradient/glass repetition?
+- [ ] Were deletion, substitution and realistic-content anti-AI tests recorded with repairs?
 
 ## Engineering
 

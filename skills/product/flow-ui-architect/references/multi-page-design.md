@@ -82,6 +82,15 @@ Do not optimize to a universal click ceiling. A necessary confirmation can be ju
 - Which realistic long, short, missing and exceptional content states were used to stress-test the page?
 - What visual anti-pattern is most likely here, and how will review detect or repair it?
 
+### Spatial orchestration and dynamic behavior
+
+- Assign every major region the role of Task, Reference, Navigation, Tool, Status, Transient or Breathing Space.
+- Record the selected layout skeleton, the rejected alternative and the spatial bottleneck (`main_task_visible_area_ratio`, reference visibility, round trips, scroll burden or occlusion).
+- For every major panel, filter, assistant, feedback layer and floating element record `default_visibility` (V0–V4), expand/collapse trigger, auto-collapse prohibition, dismissal rule, pin/remember preference and state restoration.
+- Record the responsive transformation sequence (`resize → compact → rail → drawer/sheet → dedicated page`) and the semantics/state preserved at every transition.
+- Record the floating occlusion budget, focus return target, keyboard behavior and the fallback container if the current container becomes too small.
+- If any field is not applicable, write `N/A — <specific reason>`; a simple page or shared component is not an exemption.
+
 ## Stage C: Shared product contract
 
 Before detailed screen styling, establish:
@@ -94,6 +103,7 @@ Before detailed screen styling, establish:
 - Authentication, permissions and destructive action conventions.
 - Search, filter, sorting and draft preservation rules.
 - Responsive behavior and overlay patterns.
+- Spatial roles, lifecycle levels, pin/remember policy, state restoration and floating occlusion budget.
 
 The shared contract can evolve, but changes must trigger a cross-page review.
 

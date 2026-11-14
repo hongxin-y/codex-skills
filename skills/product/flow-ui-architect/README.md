@@ -1,4 +1,4 @@
-# Flow UI Architect V2.2
+# Flow UI Architect V2.3
 
 A Codex Skill for turning a short business scenario into a coherent, task-first, visually intentional and implementable UI.
 
@@ -36,5 +36,7 @@ The process does not impose arbitrary counts on pages, Red Routes, actions or re
 Every invocation also uses a step ledger. The agent must read and apply the references routed for each step, produce the required intermediate artifact, and mark a step as N/A or BLOCKED with a reason instead of silently skipping it.
 
 V2.2 adds a mandatory Art Direction Gate after the page blueprint and before detailed styling or code. The agent derives a Visual Context Profile, compares meaningful visual directions when the direction is open, selects a Visual Grammar Contract, derives component variants from it, stress-tests realistic content and runs Art Direction Review/Repair.
+
+V2.3 adds a mandatory Spatial Orchestration Gate before detailed layout. The agent assigns Task, Reference, Navigation, Tool, Status, Transient and Breathing Space roles; chooses and compares a layout skeleton; decides V0–V4 visibility, collapse/expand, pin/remember and state restoration; specifies responsive transformation (`resize → compact → rail → drawer/sheet → dedicated page`); and records floating occlusion and focus budgets. Every major region, panel, filter, assistant and feedback layer must have these decisions, or an explicit N/A reason. The agent must not write UI code until the ledger's decision steps are complete. Visual decisions also record bounded user-perception hypotheses with observable signals, counter-risks and verification methods. Review applies perceived-quality dimensions in priority order and runs deletion, substitution and realistic-content tests to remove generic AI-template signals.
 
 See SKILL.md for the operating instructions.

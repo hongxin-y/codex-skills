@@ -1,5 +1,14 @@
 # UI/UX validation checklist
 
+## Execution compliance
+
+- [ ] The step ledger is present and covers every applicable step.
+- [ ] Each required reference was read before the related decision was made.
+- [ ] Each DONE step has a concrete artifact, not a generic claim.
+- [ ] Each skipped step is marked N/A with a task-specific reason; blocked steps are reported honestly.
+- [ ] BUILD did not begin before the task model, route model, blueprint and interaction contract were recorded.
+- [ ] REVIEW includes observed evidence, repairs and rerun checks when repairs were requested.
+
 ## Product and task
 
 - Is each Red Route grounded in a real user job?

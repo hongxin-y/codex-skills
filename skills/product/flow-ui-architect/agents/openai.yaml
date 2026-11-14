@@ -1,4 +1,4 @@
 interface:
   display_name: "Flow UI Architect"
   short_description: "Design, review and build coherent task-first UI"
-  default_prompt: "Use $flow-ui-architect to turn this business scenario into a coherent UI, including page element blueprints and cross-page Review/Repair when multiple pages are involved."
+  default_prompt: "Use $flow-ui-architect and follow its required step ledger and reference routing to turn this business scenario into a coherent UI, including page element blueprints and cross-page Review/Repair when multiple pages are involved."

@@ -33,4 +33,6 @@ Multi-page design now follows a mandatory design-and-review gate:
 
 The process does not impose arbitrary counts on pages, Red Routes, actions or review cycles. It retains applicable accessibility and technical standards.
 
+Every invocation also uses a step ledger. The agent must read and apply the references routed for each step, produce the required intermediate artifact, and mark a step as N/A or BLOCKED with a reason instead of silently skipping it.
+
 See SKILL.md for the operating instructions.

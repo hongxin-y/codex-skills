@@ -2,6 +2,24 @@
 
 Adapt the detail to the task. The sections below are content expectations, not fixed quotas.
 
+## Required execution record
+
+Before the deliverable, include a compact ledger with one row for every applicable step:
+
+| Step | Reference read | Decision applied | Artifact produced | Status |
+| --- | --- | --- | --- | --- |
+| Scope and facts |  |  |  | DONE / N/A with reason / BLOCKED |
+| Task model |  |  |  | DONE / N/A with reason / BLOCKED |
+| Route model |  |  |  | DONE / N/A with reason / BLOCKED |
+| Page scope and blueprint |  |  |  | DONE / N/A with reason / BLOCKED |
+| Layout and interaction |  |  |  | DONE / N/A with reason / BLOCKED |
+| Cost and continuity |  |  |  | DONE / N/A with reason / BLOCKED |
+| Visual system |  |  |  | DONE / N/A with reason / BLOCKED |
+| Review and repair |  |  |  | DONE / N/A with reason / BLOCKED |
+| Delivery |  |  |  | DONE / N/A with reason / BLOCKED |
+
+Do not fill the reference or artifact columns with generic confirmations. Name the file or rule read and summarize the concrete decision it changed. If a step is not applicable, explain why it cannot affect the requested result.
+
 ## DESIGN: single page
 
 Describe actor, job, key assumptions, Red Routes, selected layout, component hierarchy, interactions, visual direction, responsive behavior, important states and validation.

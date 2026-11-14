@@ -16,6 +16,8 @@ Transform a brief business scenario into an appropriate, usable, attractive and 
 - Preserve useful existing project conventions and components.
 - Make important decisions explicit, but adapt explanation length to task complexity.
 - Keep real accessibility standards and technical constraints.
+- Treat this file and the routed reference files as an execution protocol. Do not jump from a brief to a polished screen or code without completing the required intermediate records.
+- For every required step, read the named reference before making the step's decision, apply the relevant rules, and record the concrete artifact produced. A reference may be marked `N/A` only with a reason tied to the task; never claim to have followed unread guidance.
 
 ## Select the operating mode
 
@@ -25,37 +27,61 @@ BUILD: Inspect the existing repository and implement the requested UI. For a mul
 
 REVIEW: Diagnose existing designs or code, identify task friction and inconsistencies, and propose or implement repairs. Distinguish observed defects from hypotheses.
 
+## Mandatory execution protocol
+
+Run this protocol for DESIGN, BUILD and REVIEW. Keep a visible step ledger in the working response or working notes:
+
+| Step | Required artifact | Required references | Status |
+| --- | --- | --- | --- |
+| 0. Scope and facts | USER / REPO / EVIDENCE / ASSUMPTIONS split | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
+| 1. Task model | Actors, objects, permissions, outcomes and constraints | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
+| 2. Route model | Entry → locate → inspect → decide → act → feedback → recovery → continuation; Red Route map | `decision-rules.md` | DONE, N/A with reason, or BLOCKED |
+| 3. Page scope and blueprint | Page inventory, or a compact Page Element Blueprint for a single page | `multi-page-design.md`, `design-output-template.md` | DONE, N/A with reason, or BLOCKED |
+| 4. Layout and interaction | Compared layout choice, component ownership and interaction states | `layout-patterns.md`, `interaction-patterns.md` | DONE, N/A with reason, or BLOCKED |
+| 5. Cost and continuity | P/K/D/C/W/E/M analysis, preserved context and handoffs | `operation-cost.md`, `flow-continuity.md` | DONE, N/A with reason, or BLOCKED |
+| 6. Visual system | Hierarchy, density, tokens, responsive transformations and accessibility decisions | `color-and-tokens.md`, `visual-quality.md` | DONE, N/A with reason, or BLOCKED |
+| 7. Review and repair | Findings, repairs, impacted routes and regression checks | `review-repair-protocol.md`, `validation-checklist.md` | DONE, N/A with reason, or BLOCKED |
+| 8. Delivery | Requested design, implementation or review result with limitations | `implementation-playbook.md` when building; `design-output-template.md` otherwise | DONE, N/A with reason, or BLOCKED |
+
+Rules for the ledger:
+
+- Do not mark a step DONE with a generic sentence. Record the decision, the artifact, and the reference rule that changed the decision.
+- Do not start detailed layout or code while Steps 0–5 are incomplete. BUILD must inspect the repository before implementation; REVIEW must record observed evidence before proposing repairs.
+- If a step does not apply, write `N/A — <specific reason>` and continue only after checking that later steps do not depend on it. If it is blocked, state the blocker and either ask the smallest necessary question or continue with a labeled assumption when safe.
+- After implementation or repair, rerun the affected steps against actual behavior. A design note, blueprint or paper review does not prove the UI works.
+- The final response must include the completed ledger, assumptions, unresolved limitations, changed files when applicable, and actual checks performed.
+
 ## Core workflow
 
 ### Understand the business task
 
-Infer actors, triggers, outcomes, business objects, permissions, frequency, urgency, error costs, device context and collaboration needs. Read [task-modeling](references/task-modeling.md).
+Infer actors, triggers, outcomes, business objects, permissions, frequency, urgency, error costs, device context and collaboration needs. **MUST READ and apply** [task-modeling](references/task-modeling.md), then record the task model in Step 1.
 
 ### Identify task routes
 
-Model entry, locate, inspect, decide, act, feedback, recovery and continuation. Select Red Routes according to user value, frequency, business impact, risk and dependencies. There is no prescribed route count. Read [decision-rules](references/decision-rules.md).
+Model entry, locate, inspect, decide, act, feedback, recovery and continuation. Select Red Routes according to user value, frequency, business impact, risk and dependencies. There is no prescribed route count. **MUST READ and apply** [decision-rules](references/decision-rules.md), then record the route map in Step 2.
 
 ### Determine page scope
 
-For a single-page task, select a suitable layout directly.
+For a single-page task, select a suitable layout directly, but still create a compact Page Element Blueprint before detailed styling or code.
 
 For multiple pages or connected product surfaces, the MULTI-PAGE DESIGN GATE below is mandatory before detailed UI or implementation.
 
 ### Choose layout and interaction patterns
 
-Select workbench, queue, master-detail, search/results, dashboard, form, wizard, editor, timeline, feed, comparison or a justified hybrid. Compare alternatives. Use inline actions, drawers, modals, tabs, sticky bars, FABs and other controls only when they fit the job. Read [layout-patterns](references/layout-patterns.md) and [interaction-patterns](references/interaction-patterns.md).
+Select workbench, queue, master-detail, search/results, dashboard, form, wizard, editor, timeline, feed, comparison or a justified hybrid. Compare alternatives. Use inline actions, drawers, modals, tabs, sticky bars, FABs and other controls only when they fit the job. **MUST READ and apply** [layout-patterns](references/layout-patterns.md) and [interaction-patterns](references/interaction-patterns.md), then record the chosen pattern and rejected alternatives in Step 4.
 
 ### Optimize cost and continuity
 
-Compare P/K/D/C/W/E/M: pointing, input, decisions, context switches, waiting, error recovery and memory burden. Preserve search, filters, sort, selection, scroll, drafts and next-task context where relevant. Read [operation-cost](references/operation-cost.md) and [flow-continuity](references/flow-continuity.md).
+Compare P/K/D/C/W/E/M: pointing, input, decisions, context switches, waiting, error recovery and memory burden. Preserve search, filters, sort, selection, scroll, drafts and next-task context where relevant. **MUST READ and apply** [operation-cost](references/operation-cost.md) and [flow-continuity](references/flow-continuity.md), then record the cost and handoff decisions in Step 5.
 
 ### Build the visual system
 
-Define hierarchy, density, typography, spacing, semantic color tokens, surfaces and responsive transformations. Read [color-and-tokens](references/color-and-tokens.md) and [visual-quality](references/visual-quality.md).
+Define hierarchy, density, typography, spacing, semantic color tokens, surfaces and responsive transformations. **MUST READ and apply** [color-and-tokens](references/color-and-tokens.md) and [visual-quality](references/visual-quality.md), then record the visual and accessibility decisions in Step 6.
 
 ### Deliver and validate
 
-For DESIGN, provide an actionable blueprint or prototype. For BUILD, implement and run available checks. For REVIEW, prioritize findings and repairs. Use [design-output-template](references/design-output-template.md), [implementation-playbook](references/implementation-playbook.md) and [validation-checklist](references/validation-checklist.md).
+For DESIGN, provide an actionable blueprint or prototype. For BUILD, implement and run available checks. For REVIEW, prioritize findings and repairs. **MUST READ and apply** [design-output-template](references/design-output-template.md), [implementation-playbook](references/implementation-playbook.md) when building, [review-repair-protocol](references/review-repair-protocol.md) when reviewing or repairing, and [validation-checklist](references/validation-checklist.md) before delivery.
 
 ## Mandatory MULTI-PAGE DESIGN GATE
 
@@ -80,7 +106,7 @@ Create a Page Element Blueprint for EACH page, including:
 
 Do not skip this step and jump straight to independent page mockups. In DESIGN mode, present these blueprints as part of the deliverable. In BUILD mode, keep a concise design record and proceed to code.
 
-Read [multi-page-design](references/multi-page-design.md).
+Read and apply [multi-page-design](references/multi-page-design.md). For single-page work, use its Page Element Blueprint fields in compact form; do not use single-page scope as a reason to skip task, state, handoff or recovery design.
 
 ### Gate C — Cross-page contract and matrices
 
@@ -139,4 +165,4 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 
 ## Final response contract
 
-Show concrete layouts and interactions, not only design philosophy. For multi-page DESIGN, show page element blueprints, shared rules, important cross-page transitions, and meaningful Review/Repair findings. For BUILD, report changed files and actual tests. State assumptions and unresolved limitations truthfully.
+Show concrete layouts and interactions, not only design philosophy. Include the completed execution ledger and the references read/applied. For multi-page DESIGN, show page element blueprints, shared rules, important cross-page transitions, and meaningful Review/Repair findings. For BUILD, report changed files and actual tests. For REVIEW, report observed evidence, repairs and rerun checks. State assumptions and unresolved limitations truthfully; never replace a missing artifact with a claim that the step was followed.

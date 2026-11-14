@@ -61,7 +61,7 @@ $flow-ui-architect 为一个面向客服团队的工单管理后台设计 UI：�
 - **BUILD**：检查现有项目后实现 UI，并报告实际修改和检查结果。
 - **REVIEW**：审查现有界面的任务摩擦、重复功能、跨页断点和视觉/技术一致性，并修复问题。
 
-当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
+每次调用还会维护步骤台账：按步骤读取并应用对应参考文件，产出中间设计记录；不能静默跳步，只有标记 N/A 并说明理由，或报告 BLOCKED，才能进入后续步骤。当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
 
 ## 磁盘诊断示例：从占用分析到清理路径
 

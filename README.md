@@ -10,6 +10,7 @@
 | Travel · 旅行 | [map-itinerary-visualizer](skills/travel/map-itinerary-visualizer/SKILL.md) | 定位行程地点，按日期规划访问顺序，生成带编号、路线箭头和图例的地图图片。 |
 | System · 系统 | [disk-space-diagnosis](skills/system/disk-space-diagnosis/SKILL.md) | 只读分析 Windows 磁盘占用，解释大项用途、清理风险和可行的优化路径，不默认执行清理。 |
 | Writing · 写作 | [document-refinement](skills/writing/document-refinement/SKILL.md) | 润色中英文邮件、报告和方案，保留原意与修改边界，减少空话和写作过程旁白，逐步补全缺失内容。 |
+| Product · 产品 | [flow-ui-architect](skills/product/flow-ui-architect/SKILL.md) | 根据业务场景设计、审查和实现连贯的 task-first UI；多页面任务先建立页面蓝图与跨页契约。 |
 
 ## 快速开始
 
@@ -48,7 +49,19 @@ $attraction-itinerary-excel 按这份行程逐条整理地点，核实门票、�
 $map-itinerary-visualizer 把这份行程按日期画在地图上，标出地点编号和建议路线，并说明调整顺序的原因。
 
 $disk-space-diagnosis 帮我分析 C 盘为什么快满了，解释主要占用项和清理风险，只做诊断，不删除或修改文件。
+
+$flow-ui-architect 为一个面向客服团队的工单管理后台设计 UI：让主管快速发现快超时工单并分配给合适的客服。先给出主路径、操作成本、页面结构和状态，再决定是否实现代码。
 ```
+
+### Flow UI Architect V2.1
+
+`flow-ui-architect` 支持三种工作模式：
+
+- **DESIGN**：输出页面元素蓝图、交互方案和可实现的视觉结构。
+- **BUILD**：检查现有项目后实现 UI，并报告实际修改和检查结果。
+- **REVIEW**：审查现有界面的任务摩擦、重复功能、跨页断点和视觉/技术一致性，并修复问题。
+
+当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
 
 ## 磁盘诊断示例：从占用分析到清理路径
 

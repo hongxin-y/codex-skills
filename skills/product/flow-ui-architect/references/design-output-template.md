@@ -12,6 +12,7 @@ Before the deliverable, include a compact ledger with one row for every applicab
 | Task model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Route model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Page scope and blueprint |  |  |  | DONE / N/A with reason / BLOCKED |
+| Art direction |  |  |  | DONE / N/A with reason / BLOCKED |
 | Layout and interaction |  |  |  | DONE / N/A with reason / BLOCKED |
 | Cost and continuity |  |  |  | DONE / N/A with reason / BLOCKED |
 | Visual system |  |  |  | DONE / N/A with reason / BLOCKED |
@@ -22,7 +23,7 @@ Do not fill the reference or artifact columns with generic confirmations. Name t
 
 ## DESIGN: single page
 
-Describe actor, job, key assumptions, Red Routes, selected layout, component hierarchy, interactions, visual direction, responsive behavior, important states and validation.
+Describe actor, job, key assumptions, Red Routes, the Visual Context Profile, selected or inherited Visual Grammar Contract, selected layout, component hierarchy, interactions, responsive behavior, realistic-content stress cases, important states and validation.
 
 ## DESIGN: multiple pages — REQUIRED ORDER
 
@@ -50,6 +51,14 @@ For EACH page, present:
 | Operations | Route segment, derived interaction count and P/K/D/C/W/E/M |
 | State | Loading, empty, success, failure and permission |
 | Handoff | Entry, exit, context preservation |
+| Visual role | Operational, editorial, immersive, conversion or another justified role |
+| Focal composition | Primary/secondary focus and scan path |
+| Density mode | Sparse, moderate, dense or another justified mode |
+| Art-direction inheritance | Global rules inherited and page-level differences |
+| Surface model | Flat, border-led, layered, elevated or translucent |
+| Component expression | Important component variants and their grammar rationale |
+| Content realism | Long, short, missing and exceptional content used for review |
+| Visual anti-pattern risk | Template risks and planned repair |
 | Shared rules | Components, tokens, navigation, permissions |
 
 Show these before detailed screen layouts.
@@ -65,6 +74,8 @@ Route coverage, feature ownership, state handoffs and component/visual consisten
 ### Detailed screen designs
 
 Layouts, controls, labels, interaction states, responsive transformation and visual direction.
+
+The Visual Context Profile and Visual Grammar Contract must already be recorded before this section. Derive component variants from the contract rather than selecting them independently.
 
 ### Review and Repair log
 

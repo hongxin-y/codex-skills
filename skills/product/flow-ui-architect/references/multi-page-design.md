@@ -72,6 +72,16 @@ Do not optimize to a universal click ceiling. A necessary confirmation can be ju
 - Which components and tokens are shared?
 - How does the layout transform on smaller screens?
 
+### Visual role and inheritance
+
+- What is this page's visual role: operational, editorial, immersive, conversion or another justified role?
+- What are the primary and secondary focal points and the intended scan path?
+- What density mode does the page need, and why does its task justify it?
+- Which Visual Grammar Contract rules does the page inherit, and which differences are intentional?
+- Which surface model, component variants, imagery, iconography and motion rules apply?
+- Which realistic long, short, missing and exceptional content states were used to stress-test the page?
+- What visual anti-pattern is most likely here, and how will review detect or repair it?
+
 ## Stage C: Shared product contract
 
 Before detailed screen styling, establish:
@@ -108,7 +118,7 @@ For every page transition, record source, destination, state carried, return beh
 
 ### Visual and component matrix
 
-Check shared headers, buttons, forms, filters, status labels, tables, feedback and navigation for consistent semantics and appearance.
+Check shared headers, buttons, forms, filters, status labels, tables, feedback and navigation for consistent semantics and appearance. Also check typography roles, grid/alignment, density, radius, borders, surfaces, shadows, icons, imagery, motion and component variants against the Visual Grammar Contract.
 
 ## Stage E: Detailed layout
 

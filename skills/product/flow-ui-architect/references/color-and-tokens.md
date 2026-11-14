@@ -16,7 +16,7 @@ Reuse existing project tokens where possible. Avoid raw hex values scattered acr
 
 ## Workflow
 
-Choose a neutral foundation and suitable accent. Separate semantic status from decoration. Define hover, pressed, selected, disabled and focus states. Test foreground/background combinations. Support dark mode where relevant.
+Choose a palette architecture with [color-strategy-catalog](color-strategy-catalog.md), then choose a neutral foundation and suitable accent. Separate semantic status from decoration. Define hover, pressed, selected, disabled and focus states. Test foreground/background combinations. Support dark mode where relevant.
 
 OKLCH may help control perceptual color variation, but is not mandatory.
 
@@ -33,3 +33,5 @@ The 60/30/10 palette ratio is a possible starting point, not a law. Color psycho
 ## Cross-page consistency
 
 Use the same semantic token for the same meaning across pages. A warning, selected state or destructive action must not change meaning because a page has different styling.
+
+Color is one part of the Visual Grammar Contract. It must agree with typography, grid, density, shape, surface, imagery, iconography, motion and component expression.

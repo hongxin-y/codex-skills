@@ -6,7 +6,7 @@
 - [ ] Each required reference was read before the related decision was made.
 - [ ] Each DONE step has a concrete artifact, not a generic claim.
 - [ ] Each skipped step is marked N/A with a task-specific reason; blocked steps are reported honestly.
-- [ ] BUILD did not begin before the task model, route model, blueprint and interaction contract were recorded.
+- [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract and interaction contract were recorded.
 - [ ] REVIEW includes observed evidence, repairs and rerun checks when repairs were requested.
 
 ## Product and task
@@ -38,6 +38,12 @@
 ## Visual and accessibility
 
 - Is there a coherent hierarchy and visual thesis?
+- Is there a documented Visual Context Profile and selected art direction or inherited visual contract?
+- Were materially different candidate directions compared when the visual direction was open?
+- Does the Visual Grammar Contract cover typography, grid, density, palette, shape, surface/depth, imagery, iconography, motion and component variants?
+- Were component styles derived from that contract rather than chosen independently?
+- Were long content, missing values, dense tables, permissions, errors, empty states and narrow layouts used in a visual stress test?
+- Does the anti-template review distinguish usability, system consistency, art direction and subjective taste?
 - Are semantic tokens reused?
 - Are statuses distinguishable without color alone?
 - Are semantic controls, accessible names and visible focus present?

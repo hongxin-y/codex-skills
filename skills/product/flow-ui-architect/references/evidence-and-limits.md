@@ -17,7 +17,11 @@ Do not claim external research or usability testing that was not performed.
 - Material Design: https://m3.material.io/
 - Apple Human Interface Guidelines: https://developer.apple.com/design/human-interface-guidelines/
 - Nielsen Norman Group usability heuristics: https://www.nngroup.com/articles/ten-usability-heuristics/
+- Nielsen Norman Group visual design and component guidance: https://www.nngroup.com/articles/principles-visual-design/
 - GOV.UK Design System: https://design-system.service.gov.uk/
+- Microsoft Fluent 2: https://fluent2.microsoft.design/
+- IBM Carbon: https://www.carbondesignsystem.com/
+- Adobe Spectrum: https://spectrum.adobe.com/
 - Baymard research: https://baymard.com/research
 - OpenAI Skills: https://github.com/openai/skills
 
@@ -33,6 +37,10 @@ Use the relevant source for each claim. Platform conventions are not universal m
 - Universal F/Z scanning.
 - A fixed typography-size count.
 - Universal color psychology.
+- A visual trend is not a complete art direction.
+- A design system is not a visual theme to copy wholesale.
+- A candidate direction is not better merely because it is more expressive.
+- “AI look” is a diagnostic category, not a formal usability score.
 - Mandatory FAB, modal, wizard or dashboard.
 - A fixed number of Review/Repair cycles.
 
@@ -41,3 +49,5 @@ Keep numbers when they are actual measured data, necessary business constraints 
 ## Limits
 
 A plausible design is not the same as a user-tested design. A reviewed blueprint is not the same as a verified implementation. State what was actually checked.
+
+Art-direction judgments should distinguish observable usability or system-consistency defects from art-direction weaknesses and subjective taste. Color/emotion evidence supports associations, not guaranteed behavior or conversion. The attached research report is a source for these boundaries, not an instruction to cite or browse every source during a task.

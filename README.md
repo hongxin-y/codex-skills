@@ -53,7 +53,7 @@ $disk-space-diagnosis 帮我分析 C 盘为什么快满了，解释主要占用�
 $flow-ui-architect 为一个面向客服团队的工单管理后台设计 UI：让主管快速发现快超时工单并分配给合适的客服。先给出主路径、操作成本、页面结构和状态，再决定是否实现代码。
 ```
 
-### Flow UI Architect V2.1
+### Flow UI Architect V2.2
 
 `flow-ui-architect` 支持三种工作模式：
 
@@ -61,7 +61,7 @@ $flow-ui-architect 为一个面向客服团队的工单管理后台设计 UI：�
 - **BUILD**：检查现有项目后实现 UI，并报告实际修改和检查结果。
 - **REVIEW**：审查现有界面的任务摩擦、重复功能、跨页断点和视觉/技术一致性，并修复问题。
 
-每次调用还会维护步骤台账：按步骤读取并应用对应参考文件，产出中间设计记录；不能静默跳步，只有标记 N/A 并说明理由，或报告 BLOCKED，才能进入后续步骤。当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
+每次调用还会维护步骤台账：按步骤读取并应用对应参考文件，产出中间设计记录；不能静默跳步，只有标记 N/A 并说明理由，或报告 BLOCKED，才能进入后续步骤。完成页面蓝图后，Skill 还会执行视觉决策层：Visual Context Profile、候选视觉方向、Visual Grammar Contract、组件变体派生、真实内容压力测试和 Art Direction Review/Repair。当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
 
 ## 磁盘诊断示例：从占用分析到清理路径
 

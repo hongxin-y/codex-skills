@@ -8,7 +8,7 @@ Review is not the final paragraph of a design report. It is a repair loop with e
 
 ## Required loop
 
-Page Blueprints → Review → Issue Ledger → Repair → Regression Review → Re-evaluate.
+Page Blueprints → Art Direction Gate → Review → Issue Ledger → Repair → Regression Review → Re-evaluate.
 
 Repeat while material issues remain and actionable progress is possible. Do not prescribe a fixed number of cycles. The distinct review lenses below must be covered, even if they are combined for a small product.
 
@@ -59,6 +59,17 @@ Compare P/K/D/C/W/E/M qualitatively or using actual measured data. If a proposed
 ## Review lens: Visual, responsive and engineering consistency
 
 Verify semantic tokens, type hierarchy, spacing, button variants, icons, status colors, table patterns, navigation behavior, focus states, mobile transformations and component reuse.
+
+## Review lens: Art direction and anti-template quality
+
+Use [art-direction-review](art-direction-review.md) and [anti-ai-template-review](anti-ai-template-review.md). Verify:
+
+- The selected visual thesis is visible in typography, grid, density, palette, shape, surface, imagery, iconography, motion and component expression.
+- Pages look like one product without forcing identical layouts or inventing independent visual languages.
+- Component variants derive from the Visual Grammar Contract rather than being chosen independently.
+- Realistic content and exceptional states influenced the layout and visual decisions.
+- Gradients, blur, glow, pills, cards, KPI blocks, charts and illustrations each have a task, orientation, evidence or brand reason.
+- Findings distinguish usability defects, system inconsistencies, art-direction weaknesses and subjective taste.
 
 In BUILD mode, inspect actual code and exercise interactions. A specification review cannot substitute for implementation tests.
 

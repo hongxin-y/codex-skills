@@ -1,4 +1,4 @@
-# Flow UI Architect V2.1
+# Flow UI Architect V2.2
 
 A Codex Skill for turning a short business scenario into a coherent, task-first, visually intentional and implementable UI.
 
@@ -34,5 +34,7 @@ Multi-page design now follows a mandatory design-and-review gate:
 The process does not impose arbitrary counts on pages, Red Routes, actions or review cycles. It retains applicable accessibility and technical standards.
 
 Every invocation also uses a step ledger. The agent must read and apply the references routed for each step, produce the required intermediate artifact, and mark a step as N/A or BLOCKED with a reason instead of silently skipping it.
+
+V2.2 adds a mandatory Art Direction Gate after the page blueprint and before detailed styling or code. The agent derives a Visual Context Profile, compares meaningful visual directions when the direction is open, selects a Visual Grammar Contract, derives component variants from it, stress-tests realistic content and runs Art Direction Review/Repair.
 
 See SKILL.md for the operating instructions.

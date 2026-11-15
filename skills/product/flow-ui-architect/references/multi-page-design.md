@@ -91,6 +91,11 @@ Do not optimize to a universal click ceiling. A necessary confirmation can be ju
 - Record the floating occlusion budget, focus return target, keyboard behavior and the fallback container if the current container becomes too small.
 - If any field is not applicable, write `N/A — <specific reason>`; a simple page or shared component is not an exemption.
 
+### UI Engineering quality
+
+- Record the page's Engineering Blueprint for major regions and shared primitives: layout/sizing, spacing owner, intrinsic growth, overflow/scroll owner, positioning/sticky reference, stacking/Portal/top-layer, overlay collision, focus/hit testing, long content/i18n/RTL, async placeholder/error slots, responsive viewport/safe area, asset metrics, motion risk and validation cases.
+- Identify which decisions are design-time contracts and which require browser runtime verification. A page blueprint or screenshot does not prove scroll, hit-testing, focus, layout stability or cross-platform behavior.
+
 ## Stage C: Shared product contract
 
 Before detailed screen styling, establish:
@@ -104,6 +109,7 @@ Before detailed screen styling, establish:
 - Search, filter, sorting and draft preservation rules.
 - Responsive behavior and overlay patterns.
 - Spatial roles, lifecycle levels, pin/remember policy, state restoration and floating occlusion budget.
+- Engineering contracts for shared layout, overlay, table, form, typography, asset, motion and browser/platform behavior.
 
 The shared contract can evolve, but changes must trigger a cross-page review.
 

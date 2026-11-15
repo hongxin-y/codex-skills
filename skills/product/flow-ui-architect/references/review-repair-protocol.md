@@ -41,6 +41,20 @@ For every page and major floating element, verify:
 
 Repair lifecycle or container decisions before tuning spacing. A panel that must be reopened repeatedly is a persistence defect, not a user habit to ignore.
 
+## Review lens: UI engineering quality
+
+For each page, shared primitive and high-risk component, review the actual browser contract:
+
+- Geometry: spacing owner, box sizing, intrinsic sizing, Flex/Grid automatic minimums, visual footprint, baseline and content growth.
+- Overflow: actual scroll owner, nested scrolling, scroll chaining, truncation/wrapping, sticky reference, anchor offsets and restoration.
+- Layering: clipping boundary, stacking contexts, semantic layer token, Portal/top-layer choice, collision flip/shift/size and overlay registration.
+- Hit testing: transparent overlays, pseudo-elements, `pointer-events`, pointer capture, touch-action, nested click ownership and visible-versus-actual target.
+- Focus/accessibility: visible focus, focus containment/return, keyboard model, screen-reader tree, target size, forced colors and focus obscuration.
+- Runtime stability: image/font/skeleton/error slots, async height, hydration, virtualization measurement, layout shift, animation cancellation and reduced motion.
+- Platform: dynamic viewport, keyboard, safe area, RTL, zoom, CJK/emoji/font fallback, target browser and embedded context.
+
+Run the symptom-first [ui-debug-playbook](ui-debug-playbook.md) before changing CSS. In BUILD, collect a runtime audit and rerun affected routes after repairs. Treat arbitrary huge z-index, global `transition: all`, blanket `will-change`, unbounded `100vh`, `outline:none` without replacement and component-level external margins as review risks.
+
 ## Review lens: Cross-page architecture
 
 Compare ALL page blueprints and the shared contract:

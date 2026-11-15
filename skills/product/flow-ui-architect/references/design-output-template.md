@@ -17,6 +17,7 @@ Before the deliverable, include a compact ledger with one row for every applicab
 | Layout and interaction |  |  |  | DONE / N/A with reason / BLOCKED |
 | Cost and continuity |  |  |  | DONE / N/A with reason / BLOCKED |
 | Visual system |  |  |  | DONE / N/A with reason / BLOCKED |
+| UI engineering quality |  |  |  | DONE / N/A with reason / BLOCKED |
 | Review and repair |  |  |  | DONE / N/A with reason / BLOCKED |
 | Delivery |  |  |  | DONE / N/A with reason / BLOCKED |
 
@@ -24,7 +25,7 @@ Do not fill the reference or artifact columns with generic confirmations. Name t
 
 ## DESIGN: single page
 
-Describe actor, job, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, realistic-content stress cases, important states and validation.
+Describe actor, job, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
 
 ## DESIGN: multiple pages — REQUIRED ORDER
 
@@ -55,6 +56,7 @@ For EACH page, present:
 | Persistence | Pin/remember preference, state restored and auto-collapse prohibitions |
 | Responsive transformation | Resize → compact → rail → drawer/sheet → page decisions and preserved semantics |
 | Occlusion budget | Floating elements, covered area, focus/keyboard behavior and escalation path |
+| Engineering blueprint | Layout/sizing, spacing owner, overflow/scroll, positioning/layering, overlay collision, focus/hit testing, content/async, responsive/assets, motion and validation cases |
 | Component decision fields | `component_role`, `information_priority`, `task_frequency`, `task_criticality`, `context_dependency`, `reference_persistence`, `default_visibility`, `expandability`, `auto_collapse_policy`, `dismissal_policy`, `user_pin_capability`, `remember_user_preference`, `responsive_transformation`, `occlusion_budget`, `interaction_mode`, `keyboard_behavior`, `focus_return_target`, `screen_reader_state`, `state_restore_policy`, `shared_across_pages`, `canonical_action_owner` |
 | Operations | Route segment, derived interaction count and P/K/D/C/W/E/M |
 | State | Loading, empty, success, failure and permission |
@@ -85,6 +87,10 @@ Route coverage, feature ownership, state handoffs and component/visual consisten
 Layouts, controls, labels, interaction states, responsive transformation and visual direction.
 
 The Visual Context Profile and Visual Grammar Contract must already be recorded before this section. Derive component variants from the contract rather than selecting them independently.
+
+### UI Engineering Quality
+
+For each major region or shared primitive, summarize the Engineering Blueprint: spacing owner, intrinsic sizing and content-growth rule, overflow and scroll owner, containing block and sticky reference, stacking/portal/top-layer policy, collision boundary, focus/hit-testing behavior, long-content/i18n/RTL policy, async size stability, responsive/safe-area strategy, asset metrics and validation cases. For BUILD, include browser runtime audit, screenshot regression, accessibility automation and manual keyboard/touch/overlay checks with verified or unverified status.
 
 ### Review and Repair log
 

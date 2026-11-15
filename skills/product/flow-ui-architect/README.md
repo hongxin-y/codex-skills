@@ -1,4 +1,4 @@
-# Flow UI Architect V2.3
+# Flow UI Architect V2.4
 
 A Codex Skill for turning a short business scenario into a coherent, task-first, visually intentional and implementable UI.
 
@@ -38,5 +38,7 @@ Every invocation also uses a step ledger. The agent must read and apply the refe
 V2.2 adds a mandatory Art Direction Gate after the page blueprint and before detailed styling or code. The agent derives a Visual Context Profile, compares meaningful visual directions when the direction is open, selects a Visual Grammar Contract, derives component variants from it, stress-tests realistic content and runs Art Direction Review/Repair.
 
 V2.3 adds a mandatory Spatial Orchestration Gate before detailed layout. The agent assigns Task, Reference, Navigation, Tool, Status, Transient and Breathing Space roles; chooses and compares a layout skeleton; decides V0–V4 visibility, collapse/expand, pin/remember and state restoration; specifies responsive transformation (`resize → compact → rail → drawer/sheet → dedicated page`); and records floating occlusion and focus budgets. Every major region, panel, filter, assistant and feedback layer must have these decisions, or an explicit N/A reason. The agent must not write UI code until the ledger's decision steps are complete. Visual decisions also record bounded user-perception hypotheses with observable signals, counter-risks and verification methods. Review applies perceived-quality dimensions in priority order and runs deletion, substitution and realistic-content tests to remove generic AI-template signals.
+
+V2.4 adds a mandatory UI Engineering Quality Gate. The agent creates an Engineering Blueprint for major regions and shared primitives: layout and intrinsic sizing, spacing ownership, overflow and scroll ownership, containing blocks, stacking contexts, Portal/top-layer, overlay collision, focus and hit testing, long-content/i18n/RTL behavior, async size stability, dynamic viewport and safe area, asset metrics, motion/compositing and browser validation. BUILD may start implementation only after the pre-build blueprint; it cannot declare completion until runtime overflow, overlay, focus, hit-testing, responsive, async and platform checks are rerun against the actual browser. Screenshots and rendered components are evidence, not proof of production readiness.
 
 See SKILL.md for the operating instructions.

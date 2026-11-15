@@ -6,8 +6,8 @@
 - [ ] Each required reference was read before the related decision was made.
 - [ ] Each DONE step has a concrete artifact, not a generic claim.
 - [ ] Each skipped step is marked N/A with a task-specific reason; blocked steps are reported honestly.
-- [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract, spatial orchestration record and interaction contract were recorded.
-- [ ] BUILD did not write UI code until every required decision step was DONE or explicitly N/A/BLOCKED with a resolution plan.
+- [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract, spatial orchestration record, UI Engineering Blueprint and interaction contract were recorded.
+- [ ] BUILD did not write UI code until every pre-build decision step was DONE or explicitly N/A/BLOCKED with a resolution plan.
 - [ ] REVIEW includes observed evidence, repairs and rerun checks when repairs were requested.
 
 ## Product and task
@@ -46,6 +46,19 @@
 - [ ] Floating UI has an occlusion budget and does not cover task controls, focus, errors, keyboard paths or safe areas.
 - [ ] Hover/focus content is keyboard-triggerable, dismissible and hoverable; modal focus enters, traps, escapes and returns correctly.
 - [ ] Long content, narrow widths, keyboard input and screen-reader order were checked for every dynamic container.
+
+## UI engineering quality
+
+- [ ] Every major region and shared primitive has a layout/sizing contract, spacing owner and content-growth rule.
+- [ ] Flex/Grid automatic minimum sizing was checked; `min-width:0`, `min-height:0` and `minmax(0,1fr)` are used only when justified by the content contract.
+- [ ] Every container has an explicit overflow policy and scroll owner; nested scrolling, scroll chaining, sticky reference, anchor offsets and restoration were checked.
+- [ ] Every overlay has a clipping/stacking/Portal or top-layer decision, collision boundary, flip/shift/size strategy, Escape/outside-press owner, scroll strategy and focus return.
+- [ ] Visible controls are hit-testable and keyboard reachable; transparent layers, pseudo-elements and pointer-events were inspected.
+- [ ] Images, fonts, skeletons, async cards, virtualized rows and error slots have stable-size policies; layout shifts and animation cancellation were considered.
+- [ ] Responsive runtime includes dynamic viewport, keyboard, safe-area, container width, RTL and zoom behavior when relevant.
+- [ ] High-risk components were checked against the component engineering checklist and browser/platform matrix.
+- [ ] BUILD includes browser runtime audit, screenshot regression, accessibility automation and manual keyboard/touch/overlay checks with honest status.
+- [ ] Static risks such as arbitrary z-index, `transition: all`, blanket `will-change`, `outline:none`, unbounded `100vh` and component-level external margins were searched or consciously accepted.
 
 ## Visual and accessibility
 

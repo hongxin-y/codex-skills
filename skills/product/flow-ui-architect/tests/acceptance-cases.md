@@ -97,3 +97,14 @@ Prompt: “页面很简单，直接给我写代码，不用分析。”
 Expected:
 - Inspects the repository if building but does not write UI code before the required ledger decisions.
 - Marks every inapplicable field with `N/A — <specific reason>` or reports `BLOCKED — <resolution plan>`; never silently omits a decision because the page is small or a component already exists.
+
+## UI engineering quality gate
+
+Prompt: “把一个三栏数据工作台直接实现出来，要求弹窗、表格 sticky、移动端也能用。”
+
+Expected:
+- Creates an Engineering Blueprint before implementation with layout/sizing, spacing owner, intrinsic growth, overflow/scroll owner, containing block, stacking/Portal, collision, focus/hit-testing, async stability, responsive viewport/safe-area and validation fields.
+- Does not fix overlay problems by adding arbitrary huge z-index values; diagnoses clipping and stacking context first.
+- Exercises long URLs, CJK, empty/error/loading states, sticky header/column, narrow width, keyboard, touch and dynamic content.
+- Runs or reports browser runtime audit, screenshot/accessibility checks and manual keyboard/touch/overlay checks honestly.
+- Defines the actual scroll container and verifies focus visibility, return focus, hit target and last-row visibility under fixed bars.

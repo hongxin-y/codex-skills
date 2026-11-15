@@ -46,6 +46,8 @@ Use the relevant source for each claim. Platform conventions are not universal m
 - A single “space utilization” or density score that claims to summarize all layout quality.
 - Treating V0–V4, lifecycle formulas or occlusion budgets as universal measurements; they are decision scaffolds and must be adapted to the task.
 - Inferring a user's psychology as certainty. Use observed task frequency, criticality, context dependency, recovery cost and content evidence; label psychological predictions as hypotheses.
+- Treating `z-index` tokens, Overlay Collision Budget, spacing ownership, Engineering Blueprint fields or browser matrices as Web standards; these are project governance models built on browser mechanisms.
+- Treating a screenshot, component render or automated axe result as proof of runtime correctness; scroll, hit testing, focus, real mobile keyboard and cross-browser behavior still need appropriate checks.
 
 Keep numbers when they are actual measured data, necessary business constraints or applicable standards. Remove arbitrary quotas rather than replacing them with different arbitrary quotas.
 
@@ -56,3 +58,5 @@ A plausible design is not the same as a user-tested design. A reviewed blueprint
 Art-direction judgments should distinguish observable usability or system-consistency defects from art-direction weaknesses and subjective taste. Color/emotion evidence supports associations, not guaranteed behavior or conversion. The attached research report is a source for these boundaries, not an instruction to cite or browse every source during a task.
 
 Spatial heuristics likewise do not prove efficiency. A layout with more visible content may increase comparison speed, or may overload attention; verify with task completion, error, backtracking, focus, scroll, restore and accessibility evidence when available. “Anti-AI” is a repair lens based on observable repetition, generic content and missing product semantics, not a claim about the model's internal preferences.
+
+Engineering guidance distinguishes [规范] browser/accessibility requirements, [浏览器] implementation behavior, [框架] lifecycle behavior, [设计系统] mature conventions and [综合] project heuristics. `min-width:0`, `minmax(0,1fr)`, Portal/top-layer selection, dynamic viewport units, collision middleware, screenshot thresholds and runtime probes are decisions that depend on the content contract and target platform. Record the platform, viewport, input mode and evidence for any claim of stability.

@@ -2,6 +2,66 @@
 
 These are prompts and expected design behavior, not automatically executed tests.
 
+## Reading and understanding
+
+Prompt: “设计一个帮助新手理解摄影曝光的文章页面，可以看示例和继续阅读。”
+
+Expected: reading hierarchy, understandable examples, discoverable references and preserved reading position. Success concerns comprehension and orientation; no invented assignments, approval stages or mandatory submit/complete button. Supporting navigation need not have one dominant transactional CTA.
+
+## Comparison and informed choice
+
+Prompt: “做一个手机套餐比较页面，让用户看清流量、限速和实际费用。”
+
+Expected: comparable terms, meaningful differences and important conditions visible before choosing. Does not hide limitations in advanced options or claim that faster conversion proves a better user outcome. More reading may be justified by informed choice.
+
+## Open-ended creation
+
+Prompt: “设计一个可以自由写短篇故事、保存和继续修改的工具。”
+
+Expected: flexible expression, an appropriate editor, truthful persistence feedback and recovery. Does not constrain story text to enumerated options or invent reviewer handoffs. Any changed/saved marker has a clear baseline and meaning.
+
+## Exploratory discovery
+
+Prompt: “设计一个独立插画师作品发现页，用户可以浏览、收藏和返回继续看。”
+
+Expected: user-directed discovery, useful previews and navigation with relevant position/selection preservation. No mandatory linear wizard or forced next-item jump after a favorite. Engagement duration alone is not treated as proof of user benefit.
+
+## Input and disclosure choice
+
+Prompt: “设计活动报名表：从目录选已有活动、选择参加时段、填写自由备注，少用不必要的输入。”
+
+Expected: directory-backed choices handle loading/no results; time-slot selection fits option count and availability; notes remain open text. Reliable context may prefill fields. Required fees or conditions remain visible before commitment; secondary settings may collapse without hiding errors. Does not prescribe a dropdown for every field.
+
+## Honest quantities and results
+
+Prompt: “报表显示报名人数、到场率和导出进度，但有些数据还在加载，也有请求失败。”
+
+Expected: unknown/loading/error values are not shown as zero; attendance rate states its applicable scope and denominator when needed. No invented passing target or fake percentage. Export accepted, completed, partially failed and downloaded are distinguished only where those states exist.
+
+## Visual-only change boundary
+
+Prompt: “只调整这个阅读器的字体、颜色和边距，不改任何交互。”
+
+Expected: preserves reading position, navigation, focus, collapse defaults, submission/data behavior and existing resize/scroll semantics. Checks interaction effects of CSS visibility, overflow, order and hit testing. Reports unrelated defects without redesigning the flow or adding a workflow.
+
+## Discussion-only review
+
+Prompt: “先聊聊这个购物页怎么改，不要动代码。”
+
+Expected: observes available evidence, distinguishes hypotheses and proposes concrete tradeoffs. Does not apply repairs merely because the skill includes a repair loop, and does not claim browser or usability verification that was not performed.
+
+## Conditional collaboration
+
+Prompt: “客服主管想看自己要处理的退款，以及同事正在处理的退款；一人处理完不代表整组完成。”
+
+Expected: distinguishes creator, current assignee and authorized actor where relevant; separates actionable work from waiting/monitoring, and personal from group completion. Reading a notification does not finish work. Applies collaboration guidance here without making it a requirement for the reading or discovery scenarios.
+
+## Partial bulk work and consequential action
+
+Prompt: “为相册设计批量导出，可选当前页或全部搜索结果；另有一个付费印刷下单入口。”
+
+Expected: clear selection scope and eligibility, honest partial results, and recoverable export failures without unintended repeated work. Printing shows price, scope and commitment before purchase. Opening settings does not start a paid order; routine reversible selections do not acquire payment-style confirmations.
+
 ## Operational workbench
 
 Prompt: “做一个每天批量处理退款审核的后台。”

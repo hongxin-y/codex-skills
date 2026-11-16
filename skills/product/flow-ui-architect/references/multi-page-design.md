@@ -17,7 +17,7 @@ Create a page registry:
 | Page ID | Stable identity and route or entry |
 | Role | Why this page exists |
 | Actor | Intended user and permissions |
-| Main job | User outcome owned by the page |
+| Main job | User outcome or experience criterion owned by the page |
 | Business objects | Entities read or changed |
 | Red Routes | Critical journeys using this page |
 | Entry / exit | Where the user comes from and goes |
@@ -33,8 +33,8 @@ Produce this design record BEFORE detailed visual layouts:
 ### Identity and responsibility
 
 - Page ID, title and purpose.
-- Actor and permission context.
-- Primary job and completion condition.
+- Intended user and relevant permission context.
+- Primary intent and completion or experience criterion; reading and exploration need not end in submission.
 - Responsibilities explicitly NOT owned by this page, when duplication risk exists.
 
 ### Function and content

@@ -6,6 +6,8 @@ Optimize the complete work session rather than isolated screens.
 
 Entry → locate → inspect → decide → act → feedback → next task / recover / exit.
 
+Use the segments appropriate to the intent. Reading can continue through references, creation can loop through revision, and exploration can branch without a required final submission. Do not invent a mutation or handoff to complete the diagram.
+
 Mark transitions that require re-searching, re-entering values, remembering context or waiting unnecessarily.
 
 ## State preservation ledger
@@ -46,6 +48,16 @@ Prefer list + detail + action for repeated object processing. Use a dedicated pa
 After success, update relevant records and views, show feedback and expose the next useful step. Automatic next-item navigation is appropriate only when predictable and safe.
 
 After failure, preserve entered data and offer retry, correction or escalation.
+
+Choose continuation by the user's actual goal:
+
+- Offer the next item when sequential processing is expected and eligibility is known.
+- Keep the result visible when reading, comparison or reflection should continue.
+- Open a configuration or decision when it is the next useful step; opening it does not execute its consequential action.
+- Explain waiting or handoff only when another actor or system is actually involved.
+- Allow a natural exit when the user's goal is complete, without requiring a new task.
+
+For applicable collaboration, editing, execution or bulk rules, use [scenario-extensions](scenario-extensions.md). For result, progress and freshness semantics, use [information-integrity](information-integrity.md).
 
 ## Example
 

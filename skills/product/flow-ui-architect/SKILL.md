@@ -1,19 +1,21 @@
 ---
 name: flow-ui-architect
-description: "Design, review, and implement coherent, accessible, task-first UI/UX from brief business scenarios. Use for page design, multi-page product flows, navigation, frontend implementation, UI review, visual systems, Red Routes, workflow optimization, and cross-page consistency. Infer reasonable requirements, create per-page element blueprints, review and repair duplication or continuity problems, and implement working UI when requested."
+description: "Design, review and implement UI/UX for websites, apps and multi-page products. Use for feature and interaction design, information architecture, visual systems, frontend UI changes and usability reviews. Choose patterns by user intent and preserve existing behavior outside the requested scope."
 ---
 
 # Flow UI Architect
 
-Transform a brief business scenario into an appropriate, usable, attractive and implementable interface. Optimize complete user tasks, not decorative screen count or fashionable layout templates.
+Turn a brief product scenario into an appropriate, usable, attractive and implementable interface. Support the intended user experience and complete user journeys. Reading, comparing, transacting, creating and exploring can require different definitions of success.
 
 ## Operating contract
 
 - Work as a product designer, interaction designer, visual designer and frontend engineer when appropriate.
 - A one-sentence scenario is enough to begin. Infer ordinary missing details and label consequential assumptions. Ask only when an unknown materially affects safety, permissions, business correctness or irreversible decisions.
 - Separate USER facts, REPO facts, EVIDENCE and ASSUMPTIONS. Never present guesses as verified requirements.
+- Identify the user intent and success criterion before choosing features, pages or controls. A request for a button, chart or page is a proposed solution; establish the problem it serves without expanding the user's scope.
 - Choose page count, Red Routes, action hierarchy, navigation depth, review cycles and visual complexity based on the task. Do not enforce arbitrary numerical quotas.
 - Preserve useful existing project conventions and components.
+- Respect the requested change boundary. A visual-only change preserves interaction and data behavior; reusing an existing design does not authorize importing its business rules.
 - Make important decisions explicit, but adapt explanation length to task complexity.
 - Keep real accessibility standards and technical constraints.
 - Treat this file and the routed reference files as an execution protocol. Do not jump from a brief to a polished screen or code without completing the required intermediate records.
@@ -25,7 +27,29 @@ DESIGN: Produce concrete screen and interaction designs. For a multi-page reques
 
 BUILD: Inspect the existing repository and implement the requested UI. For a multi-page build, first create a concise page blueprint and shared contract, then proceed without requiring approval unless a consequential decision is blocked. Do not replace working code with a design essay.
 
-REVIEW: Diagnose existing designs or code, identify task friction and inconsistencies, and propose or implement repairs. Distinguish observed defects from hypotheses.
+REVIEW: Diagnose existing designs or code, identify task friction and inconsistencies, and propose repairs. Implement repairs only when requested. Distinguish observed defects from hypotheses; a discussion-only review does not authorize edits.
+
+## Product intent and applicability
+
+Use the page modes in [task-modeling](references/task-modeling.md) to choose the evaluation criteria:
+
+| Dominant intent | Prioritize | Avoid assuming |
+| --- | --- | --- |
+| Find or understand | Orientation, comprehension, evidence and return position | Every page needs a submission or next-step button |
+| Compare or decide | Relevant differences, clear terms and informed choice | Faster conversion always benefits the user |
+| Operate or transact | Correct outcome, efficient action and recovery | Fewer clicks alone mean better usability |
+| Create or express | Flexible input, control, iteration and recoverability | All content should be constrained to predefined choices |
+| Explore or engage | Discovery, relevance and user-directed navigation | A single linear route or terminal completion is required |
+
+A product may combine these intents. Record the dominant intent per relevant surface and explain any tradeoff; do not turn every product into an operational workbench.
+
+Read conditional guidance only when the feature needs it:
+
+- Inputs, settings or collapsible content: [input-and-disclosure](references/input-and-disclosure.md).
+- Counts, charts, progress, results, source or freshness claims: [information-integrity](references/information-integrity.md).
+- Collaboration, editing, long-running work, bulk actions or consequential transactions: the applicable branch of [scenario-extensions](references/scenario-extensions.md). Do not create roles, approvals, versions or audit processes merely to fill a branch.
+
+These rules refine the existing steps; they do not add another execution gate.
 
 ## Mandatory execution protocol
 
@@ -34,8 +58,8 @@ Run this protocol for DESIGN, BUILD and REVIEW. Keep a visible step ledger in th
 | Step | Required artifact | Required references | Status |
 | --- | --- | --- | --- |
 | 0. Scope and facts | USER / REPO / EVIDENCE / ASSUMPTIONS split | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
-| 1. Task model | Actors, objects, permissions, outcomes and constraints | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
-| 2. Route model | Entry → locate → inspect → decide → act → feedback → recovery → continuation; Red Route map | `decision-rules.md` | DONE, N/A with reason, or BLOCKED |
+| 1. Task model | User intent, success criterion, actors, objects, relevant permissions and constraints | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
+| 2. Route model | Intent-appropriate journey, relevant feedback, recovery and continuation; Red Route map | `decision-rules.md` | DONE, N/A with reason, or BLOCKED |
 | 3. Page scope and blueprint | Page inventory, or a compact Page Element Blueprint for a single page | `multi-page-design.md`, `design-output-template.md` | DONE, N/A with reason, or BLOCKED |
 | 4. Art direction | Visual Context Profile, user-perception hypotheses, candidate directions or inherited contract, selected Visual Grammar Contract | `visual-direction-selection.md`, `user-perception-and-visual-decisions.md`, `art-direction-catalog.md`, `design-system-profiles.md` when a system foundation exists | DONE, N/A with reason, or BLOCKED |
 | 5. Spatial orchestration | Space roles, layout skeleton, lifecycle, visibility, persistence, responsive transformation and occlusion budget | `spatial-orchestration.md`, `component-morphology.md`, `visibility-persistence.md`, `responsive-transformation.md`, `floating-ui-and-occlusion.md`; `workspace-layouts.md` when applicable | DONE, N/A with reason, or BLOCKED |
@@ -57,13 +81,13 @@ Rules for the ledger:
 
 ## Core workflow
 
-### Understand the business task
+### Understand the user intent and task
 
-Infer actors, triggers, outcomes, business objects, permissions, frequency, urgency, error costs, device context and collaboration needs. **MUST READ and apply** [task-modeling](references/task-modeling.md), then record the task model in Step 1.
+Infer the user intent, success criterion, actors, triggers, objects, relevant permissions, frequency, urgency, error costs, device context and any actual collaboration needs. **MUST READ and apply** [task-modeling](references/task-modeling.md), then record the task model in Step 1. Apply scenario extensions only when their trigger exists in the product.
 
 ### Identify task routes
 
-Model entry, locate, inspect, decide, act, feedback, recovery and continuation. Select Red Routes according to user value, frequency, business impact, risk and dependencies. There is no prescribed route count. **MUST READ and apply** [decision-rules](references/decision-rules.md), then record the route map in Step 2.
+Model the relevant entry, locate, inspect, decide, act, feedback, recovery and continuation segments. A reading or exploration journey need not include a mutation, handoff or final submission. Select Red Routes according to user value, frequency, impact, risk and dependencies. There is no prescribed route count. **MUST READ and apply** [decision-rules](references/decision-rules.md), then record the route map in Step 2.
 
 ### Determine page scope
 
@@ -122,7 +146,7 @@ Identify every justified page, its role, entry/exit points and Red Route partici
 ### Gate B — Per-page element design BEFORE detailed screens
 
 Create a Page Element Blueprint for EACH page, including:
-- Page ID, purpose, actor and completion condition.
+- Page ID, purpose, intended user and completion or experience criterion.
 - Functional points and actions, including action ownership and consequences.
 - Required content, data objects, source and edit permissions.
 - Red Routes entering, passing through or completing on the page.
@@ -148,7 +172,7 @@ Run independent review passes for:
 - End-to-end Red Route continuity, operation costs and recovery.
 - Visual, responsive, accessibility and implementation consistency.
 
-Record issues, repair them, and rerun impacted and global checks. Continue as long as material findings remain and progress is possible. Do not enforce a fixed number of rounds; do not stop after merely writing a review report. Read [review-repair-protocol](references/review-repair-protocol.md).
+Record issues and, when repairs are requested, repair them and rerun impacted and global checks. Continue authorized repairs as long as material findings remain and progress is possible; do not stop at a report when implementation was requested. For discussion-only reviews, deliver findings and tradeoffs without editing. Do not enforce a fixed number of rounds. Read [review-repair-protocol](references/review-repair-protocol.md).
 
 ### Gate E — Exit and implementation
 
@@ -164,6 +188,8 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 - Use progressive disclosure without burying frequent tasks.
 - Avoid repeated functionality without a clear contextual purpose.
 - One business action must have consistent semantics and permissions wherever it appears.
+- Choose controls and disclosure from the data, intent and decision needs. Lists, dropdowns, automatic navigation and collapsed panels are conditional choices, not defaults for every product.
+- Feedback must match actual capability and evidence. Unknown data is not zero, completed execution is not necessarily success, and a preview is not a committed action.
 - Treat F/Z scan patterns, fixed click limits, 60/30/10 color ratios and universal color psychology as heuristics, not laws.
 - Never rely on color alone for status. Support keyboard and screen-reader interaction.
 
@@ -171,6 +197,9 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 
 - [task-modeling](references/task-modeling.md): actors, objects, permissions and task graph.
 - [decision-rules](references/decision-rules.md): task priority and Red Routes.
+- [input-and-disclosure](references/input-and-disclosure.md): choosing inputs, defaults and progressive disclosure when collecting information or revealing secondary content.
+- [information-integrity](references/information-integrity.md): truthful metrics, progress, result, source and freshness semantics when making data claims.
+- [scenario-extensions](references/scenario-extensions.md): conditional collaboration, editing, long-running, bulk and consequential-action rules.
 - [visual-direction-selection](references/visual-direction-selection.md): Visual Context Profile, candidate directions and Visual Grammar Contract.
 - [user-perception-and-visual-decisions](references/user-perception-and-visual-decisions.md): bounded psychological hypotheses, visual responses and counter-risks.
 - [art-direction-catalog](references/art-direction-catalog.md): visual languages, fit and anti-pattern risks.

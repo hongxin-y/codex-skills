@@ -2,22 +2,30 @@
 
 ## Objective
 
-Infer enough of the product to choose a useful interface without turning every short request into a questionnaire.
+Infer enough of the product to choose a useful interface without turning every short request into a questionnaire. Identify whether users want to find, understand, compare, decide, act, create or explore before prescribing a workflow.
 
 ## Model the task
 
 For each meaningful user job, identify:
 
-- Actor and permission boundary.
-- Trigger and expected outcome.
-- Business objects and their lifecycle states.
+- Intended user and any relevant permission boundary; not every product needs multiple roles.
+- Trigger, user intent and expected outcome or experience criterion.
+- Relevant objects or content and any states the product actually needs.
 - Actions, prerequisites, consequences and reversibility.
 - Information required at decision time.
-- Completion feedback and next likely job.
+- Feedback and a useful continuation or exit when appropriate.
 - Exceptions, interruption and recovery.
 - Device, collaboration and technical context.
 
 Use USER, REPO, EVIDENCE and ASSUMPTION distinctions. Ask only when an unknown materially changes risk, permissions or business correctness.
+
+## Establish feature value
+
+For a proposed page, control or chart, identify the user problem, who experiences it, frequency, information needed, consequence and recovery cost. Check whether existing capabilities already support the goal. Do not add a new feature solely because its component is available.
+
+Distinguish the business object from its execution attempts, versions, states and views. Keep operation scope clear: current item, selection, all matching items or a whole container. Introduce only the distinctions the actual product needs.
+
+Choose an observable success criterion appropriate to the intent. A reader may need to understand and find a source; a shopper to compare terms and choose confidently; a creator to iterate without losing work. Do not claim these outcomes were measured unless testing occurred, or force a submit/complete event into every experience.
 
 ## Derive routes from objects
 
@@ -40,7 +48,9 @@ Include low-frequency, high-risk routes when necessary. Exclude decorative route
 - Read: search, understand and reference information.
 - Experience: create, explore, learn or engage.
 
-A product can contain different modes on different pages. Model each page according to its actual job.
+A product can contain different modes on different pages, and a page can mix intents. Select the dominant mode and preserve the supporting ones. A comparison page may need more reading time, and a creative tool may need open input and experimentation; lower time or fewer actions is not automatically a better result.
+
+Use [scenario-extensions](scenario-extensions.md) only when collaboration, editing, long-running execution, bulk work or consequential actions are present. Reading, discovery and simple consumer pages do not inherit those workflows by default.
 
 ## Example
 

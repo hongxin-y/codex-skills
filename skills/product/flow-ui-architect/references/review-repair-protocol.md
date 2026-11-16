@@ -6,6 +6,10 @@ Detect and fix problems that are invisible when each page is reviewed alone: dup
 
 Review is not the final paragraph of a design report. It is a repair loop with explicit findings, changes and regression checks.
 
+Match the review to the surface's intent: comprehension and orientation for reading, informed choice for comparison, correctness and recovery for operations, control for creation, and discovery for exploration. These can combine; do not require an approval or terminal completion event on every page.
+
+Perform repairs within the requested scope. Discussion-only reviews end with evidence and proposals. For an authorized narrow repair, report unrelated architectural or visual findings without expanding the work; the priority rules below apply to changes that are actually in scope.
+
 ## Required loop
 
 Page Blueprints → Art Direction Gate → Review → Issue Ledger → Repair → Regression Review → Re-evaluate.
@@ -16,8 +20,9 @@ Repeat while material issues remain and actionable progress is possible. Do not 
 
 For every page, verify:
 
-- Clear purpose, actor, main job and completion condition.
+- Clear purpose, intended user, main intent and completion or experience criterion.
 - Required content is present at decision time.
+- An unfamiliar target user can identify the page's purpose, relevant content and available actions without project-specific coaching; exploration need not have one prescribed next action.
 - Functional points are discoverable and valid for the current state.
 - Visual focus matches the job.
 - Operation sequence is understandable and not needlessly fragmented.
@@ -63,6 +68,7 @@ Compare ALL page blueprints and the shared contract:
 - Does every major feature have a clear canonical owner?
 - Are duplicated shortcuts intentionally connected to the same operation?
 - Do labels, object names, status vocabulary and button semantics match?
+- Are status, saved changes, execution results and any effective publication distinguished when those dimensions exist? Are unknown values and differing data scopes represented honestly?
 - Is navigation hierarchy stable and predictable?
 - Are shared components reused rather than independently reinvented?
 - Are permissions and destructive-action safeguards consistent?

@@ -12,10 +12,22 @@
 
 ## Product and task
 
+- Is the dominant user intent identified, with an appropriate success or experience criterion?
+- Can an unfamiliar target user understand the surface's purpose, current scope, available actions and relevant consequences?
 - Is each Red Route grounded in a real user job?
 - Is the selected layout appropriate to the task?
 - Are current object, state and next action clear?
 - Are important exceptions and permissions represented?
+- Are new features and entry points justified by user needs rather than the availability of a component?
+- Are collaboration, editing, long-running, bulk and consequential-action checks applied only when those scenarios exist?
+
+## Inputs and information integrity
+
+- Do input controls match finite choices, dynamic directories or open expression, including any allowed creation path?
+- Are effective defaults and consequential settings discoverable before commitment, with active errors reachable even in collapsed regions?
+- Do quantities, comparisons and drill-downs use clear scope and consistent interpretation? Are unknown, unavailable, failed and zero states distinguished?
+- Do labels, progress, sources, freshness and result feedback match actual capabilities and evidence?
+- Are actual persistence, content changes, execution results and judgment distinguished where applicable, without inventing unnecessary lifecycle states?
 
 ## Multi-page structure
 
@@ -81,6 +93,7 @@
 
 ## Engineering
 
+- Were the requested change boundary and unaffected behavior preserved, including visual-only work that can alter interaction through CSS?
 - Do visible controls work?
 - Are async and error states implemented?
 - Is real versus mocked behavior clear?

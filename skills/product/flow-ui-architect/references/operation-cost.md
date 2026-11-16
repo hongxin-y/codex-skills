@@ -40,6 +40,8 @@ Example:
 
 A confirmation may increase interactions while lowering error cost. A dedicated page may add navigation while improving complex review. Evaluate the whole route and severity of failure.
 
+Choose the outcome before optimizing its cost. More time may support informed comparison or enjoyable creation; fewer actions may remove desired control. Do not use completion speed, conversion or engagement duration alone as proof of user benefit. Relate any metric to the page's intent and actual evidence.
+
 ## Validation
 
 Use real task success, time, error, backtracking and recovery data when available. Otherwise describe qualitative hypotheses and mark numerical estimates as unverified.

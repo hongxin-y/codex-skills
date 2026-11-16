@@ -2,6 +2,8 @@
 
 Adapt the detail to the task. The sections below are content expectations, not fixed quotas.
 
+Use the page's dominant intent to explain success: comprehension and orientation, informed choice, correct operation, creative control or discovery. Include scenario-specific detail only when relevant; a template field does not require adding a role, approval, transaction or publication lifecycle to the product.
+
 ## Required execution record
 
 Before the deliverable, include a compact ledger with one row for every applicable step:
@@ -25,13 +27,13 @@ Do not fill the reference or artifact columns with generic confirmations. Name t
 
 ## DESIGN: single page
 
-Describe actor, job, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
+Describe intended user, intent, success or experience criterion, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
 
 ## DESIGN: multiple pages — REQUIRED ORDER
 
 ### Product overview
 
-Business scenario, actors, objects, key assumptions and Red Route graph.
+Product scenario, intended users, intents, success or experience criteria, relevant objects, key assumptions and Red Route graph.
 
 ### Page inventory
 
@@ -44,7 +46,7 @@ For EACH page, present:
 | Field | Content |
 | --- | --- |
 | Page | ID and purpose |
-| Actor / job | Who does what |
+| User / intent | Who wants to do what, with which success or experience criterion |
 | Functions | Actions and consequences |
 | Content | Data and information shown |
 | Red Routes | Which journeys use the page |
@@ -59,7 +61,7 @@ For EACH page, present:
 | Engineering blueprint | Layout/sizing, spacing owner, overflow/scroll, positioning/layering, overlay collision, focus/hit testing, content/async, responsive/assets, motion and validation cases |
 | Component decision fields | `component_role`, `information_priority`, `task_frequency`, `task_criticality`, `context_dependency`, `reference_persistence`, `default_visibility`, `expandability`, `auto_collapse_policy`, `dismissal_policy`, `user_pin_capability`, `remember_user_preference`, `responsive_transformation`, `occlusion_budget`, `interaction_mode`, `keyboard_behavior`, `focus_return_target`, `screen_reader_state`, `state_restore_policy`, `shared_across_pages`, `canonical_action_owner` |
 | Operations | Route segment, derived interaction count and P/K/D/C/W/E/M |
-| State | Loading, empty, success, failure and permission |
+| State | Relevant loading, empty, result, recovery and permission states |
 | Handoff | Entry, exit, context preservation |
 | Visual role | Operational, editorial, immersive, conversion or another justified role |
 | Perception hypothesis | User goal, observable signal, visual response, counter-risk and verification method |

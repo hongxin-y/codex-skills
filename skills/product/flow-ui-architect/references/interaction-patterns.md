@@ -2,6 +2,8 @@
 
 Choose controls based on information requirements, task frequency, context preservation, risk and recovery.
 
+For input choice, defaults and progressive disclosure, read [input-and-disclosure](input-and-disclosure.md) when relevant. Compare alternative controls using the information being collected; the pattern table does not prescribe a universal dropdown, modal or continuous list.
+
 | Pattern | Prefer when | Avoid when |
 | --- | --- | --- |
 | Inline action/edit | Small, reversible change in context | Complex validation or risky consequences |
@@ -35,6 +37,8 @@ Design relevant loading, empty, filtered-empty, success, failure, partial succes
 ## Feedback
 
 Explain what happened, what remains and what can happen next. Use undo when safe; use confirmation when risk justifies it.
+
+Use [information-integrity](information-integrity.md) when feedback makes a data or result claim. For collaboration, content editing, long-running operations, bulk actions or consequential commitments, read only the relevant branch of [scenario-extensions](scenario-extensions.md).
 
 ## Cross-page rule
 

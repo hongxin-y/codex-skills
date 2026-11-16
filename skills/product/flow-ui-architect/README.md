@@ -1,6 +1,6 @@
-# Flow UI Architect V2.4
+# Flow UI Architect V2.5
 
-A Codex Skill for turning a short business scenario into a coherent, task-first, visually intentional and implementable UI.
+A Codex Skill for turning a short product scenario into a coherent, intent-appropriate, visually intentional and implementable UI across websites, consumer apps, creative tools and operational products.
 
 ## Install
 
@@ -19,6 +19,16 @@ Examples:
 - 使用 $flow-ui-architect 设计一个运营处理异常订单的后台。
 - 使用 $flow-ui-architect 为这个项目实现一套多页面 CRM。
 - 使用 $flow-ui-architect 审查现有页面的重复功能和跨页断点，并直接修复。
+- 使用 $flow-ui-architect 设计一个适合阅读和查找资料的科普页面。
+- 使用 $flow-ui-architect 改善套餐比较或自由创作工具的体验。
+
+## V2.5: intent-led rules and conditional scenarios
+
+Choose evaluation criteria from the user's intent: finding/understanding, comparison/decision, operation/transaction, creation/expression or exploration. Do not force every product into a queue, linear workflow, approval or final submission.
+
+The existing execution steps remain. Core decisions now include feature value, coherent navigation concepts, actual capability/result semantics and the requested change boundary. Conditional references cover input/default/disclosure choices, information integrity and scenario-specific collaboration, editing, long-running, bulk or consequential actions; read them only when their trigger exists.
+
+Discussion-only reviews do not authorize edits. Visual-only work preserves interaction and data behavior, including behavioral effects of CSS. Acceptance scenarios include reading, consumer comparison, creation and discovery as well as operational work.
 
 ## V2.1 additions
 

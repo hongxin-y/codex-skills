@@ -58,7 +58,7 @@
 
 ## 5. Reference Approval Gate
 
-在进入 Step 5 空间编排、后续布局/工程设计或代码前，必须有一条明确记录：
+在进入 Step 6 空间编排、后续布局/工程设计或代码前，必须有一条明确记录：
 
 ```text
 reference_status: APPROVED | BLOCKED | REVISE

@@ -6,9 +6,14 @@
 - [ ] Each required reference was read before the related decision was made.
 - [ ] Each DONE step has a concrete artifact, not a generic claim.
 - [ ] Each skipped step is marked N/A with a task-specific reason; blocked steps are reported honestly.
+- [ ] A function inventory and typed relationship graph exist before page, navigation or component decisions.
+- [ ] Every page, route and major component traces to function nodes; every function has an entry, result, recovery and continuation path.
+- [ ] User-habit assumptions cover first use, repeated use, interruption/return, comparison or batch behavior and device context when relevant.
+- [ ] Every decision records evidence, candidates, representative-user simulation, downstream consequences, a falsifying counterexample and verification.
 - [ ] Visual DESIGN/BUILD includes an Image Generation reference chain (`V0`, `V1`, `V2+`), per-version review log and explicit approval record before detailed implementation.
 - [ ] BUILD did not start UI code before the reference image gate, pre-code design validation and UI Engineering Blueprint were complete.
 - [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract, spatial orchestration record, UI Engineering Blueprint and interaction contract were recorded.
+- [ ] BUILD did not begin before the function and relationship model, frontend map and pre-code deliberation records were complete.
 - [ ] BUILD did not write UI code until every pre-build decision step was DONE or explicitly N/A/BLOCKED with a resolution plan.
 - [ ] REVIEW includes observed evidence, repairs and rerun checks when repairs were requested.
 

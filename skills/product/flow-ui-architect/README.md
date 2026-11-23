@@ -1,4 +1,4 @@
-# Flow UI Architect V2.6
+# Flow UI Architect V2.7
 
 A Codex Skill for turning a short product scenario into a coherent, intent-appropriate, visually intentional and implementable UI across websites, consumer apps, creative tools and operational products.
 
@@ -26,7 +26,7 @@ Examples:
 
 Choose evaluation criteria from the user's intent: finding/understanding, comparison/decision, operation/transaction, creation/expression or exploration. Do not force every product into a queue, linear workflow, approval or final submission.
 
-The existing execution steps remain. Core decisions now include feature value, coherent navigation concepts, actual capability/result semantics and the requested change boundary. Conditional references cover input/default/disclosure choices, information integrity and scenario-specific collaboration, editing, long-running, bulk or consequential actions; read them only when their trigger exists.
+The execution protocol now begins with function scope and relationships. Core decisions include feature value, coherent navigation concepts, actual capability/result semantics and the requested change boundary. Conditional references cover input/default/disclosure choices, information integrity and scenario-specific collaboration, editing, long-running, bulk or consequential actions. Read them only when their trigger exists.
 
 Discussion-only reviews do not authorize edits. Visual-only work preserves interaction and data behavior, including behavioral effects of CSS. Acceptance scenarios include reading, consumer comparison, creation and discovery as well as operational work.
 
@@ -52,5 +52,7 @@ V2.3 adds a mandatory Spatial Orchestration Gate before detailed layout. The age
 V2.4 adds a mandatory UI Engineering Quality Gate. The agent creates an Engineering Blueprint for major regions and shared primitives: layout and intrinsic sizing, spacing ownership, overflow and scroll ownership, containing blocks, stacking contexts, Portal/top-layer, overlay collision, focus and hit testing, long-content/i18n/RTL behavior, async size stability, dynamic viewport and safe area, asset metrics, motion/compositing and browser validation. BUILD may start implementation only after the pre-build blueprint; it cannot declare completion until runtime overflow, overlay, focus, hit-testing, responsive, async and platform checks are rerun against the actual browser. Screenshots and rendered components are evidence, not proof of production readiness.
 
 V2.6 adds a mandatory generated reference image gate for visual DESIGN, BUILD and visual changes in REVIEW. The agent uses the Image Generation capability to produce `V0`, then at least two targeted revisions `V1` and `V2`, recording prompts, changed decisions, review findings, rejected versions and approval. Only after the reference is approved can it complete the remaining spatial, layout, visual, engineering and pre-code validation steps; only then may BUILD write UI code. If image generation, inspection or approval is unavailable, the gate is BLOCKED and screenshots, HTML previews or text-only moodboards cannot substitute for it. After implementation, real screenshots and runtime behavior are compared with the approved reference.
+
+V2.7 adds a function-first and decision-deliberation gate. Before page, navigation, component or visual decisions, the agent builds a function inventory, typed relationship graph, canonical action ownership map, user-habit hypotheses and frontend information map. Before every step is marked DONE, it records evidence, meaningful candidates, representative-user simulations, downstream consequences, a falsifying counterexample, confidence and verification. A page cannot be justified by a feature count, and a one-line preference cannot close a decision.
 
 See SKILL.md for the operating instructions.

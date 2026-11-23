@@ -86,6 +86,27 @@ Prompt: “把这个项目的订单列表改成更高效的操作台，直接改
 
 Expected: inspect stack and components, implement actual interactions, run available checks, report real results.
 
+## Function-first frontend map
+
+Prompt: “我要做一个资料管理产品，先确定功能点和关系，再设计前端图，最后实现。”
+
+Expected:
+- Creates a function inventory before selecting pages, navigation or components.
+- Draws typed relationships such as prerequisites, sequence, alternatives, shared state, recovery and destructive impact.
+- Records canonical action owners, real states and user-habit hypotheses for first use, repeated scanning, interruption/return and device context.
+- Produces a function-to-frontend map with page/route nodes, navigation, persistent/on-demand regions, state flow, component ownership and crossing relationship edges.
+- Traces every page and major component back to function nodes and records entry, result, recovery and continuation for every important function.
+
+## Multi-step decision deliberation
+
+Prompt: “给这个功能选一个最合适的组件和布局，直接决定就行。”
+
+Expected:
+- Runs the decision-deliberation protocol before marking the choice complete.
+- States the decision, evidence, at least two meaningful candidates, representative-user simulations, downstream consequences, a falsifying counterexample, confidence and verification method.
+- Does not expose private chain-of-thought; produces a concise, auditable decision record.
+- Revisits the choice if the counterexample breaks task fit, accessibility, function relationship or implementation stability.
+
 ## Multi-page design gate
 
 Prompt: “给我设计一个有订单工作台、客户详情、报表和设置的多页面 SaaS。”

@@ -1,6 +1,6 @@
 # Multi-page design orchestration
 
-This is a mandatory pre-layout stage for multi-page products.
+This is a mandatory pre-layout stage for multi-page products. It begins with a function and relationship model; page count and frontend structure are derived from function relationships and user habits.
 
 ## Purpose
 
@@ -8,7 +8,9 @@ Prevent a set of individually attractive but mutually inconsistent pages. Design
 
 ## Stage A: Page inventory
 
-Infer the minimum justified set of pages from actors, business objects, tasks, permissions, content depth and navigation needs.
+Before the page registry, create a function graph with function IDs, user outcomes, preconditions, states, canonical owners and typed edges (`requires`, `sequence`, `alternative`, `parallel`, `contextual-shortcut`, `shared-state`, `recovery`, `destructive-impact`). Run the [decision-deliberation-protocol](decision-deliberation-protocol.md) before grouping functions into pages. A page that exists only because a feature is listed is not justified.
+
+Infer the minimum justified set of pages from actors, business objects, tasks, permissions, content depth, navigation needs and the function graph.
 
 Create a page registry:
 
@@ -26,6 +28,8 @@ Create a page registry:
 
 Avoid inventing pages to fill a navigation pattern. Combine or separate surfaces based on real task boundaries.
 
+For every page, record the function nodes it owns, the incoming/outgoing relationship edges, the user-habit assumptions that change ordering or persistence, and the evidence for the chosen page boundary.
+
 ## Stage B: Page Element Blueprint — REQUIRED FOR EACH PAGE
 
 Produce this design record BEFORE detailed visual layouts:
@@ -40,6 +44,7 @@ Produce this design record BEFORE detailed visual layouts:
 ### Function and content
 
 - Functional points: actions the user can perform, with trigger, scope, consequence and permission.
+- Function nodes owned by this page, relationship edges crossing the page boundary, canonical action owners and the user-habit assumptions behind the grouping.
 - Content: business data, explanatory content, status, metadata and decision evidence.
 - Element inventory: navigation, headers, filters, search, tables, cards, forms, controls, feedback, overlays and secondary content.
 - Element priority: which are always visible, contextual or progressively disclosed.

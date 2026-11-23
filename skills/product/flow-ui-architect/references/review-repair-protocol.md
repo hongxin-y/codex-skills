@@ -37,6 +37,19 @@ For every page, verify:
 
 Repair missing or misplaced elements before polishing.
 
+## Review lens: Functional scope and frontend map
+
+Before reviewing page styling, inspect the function inventory and relationship graph:
+
+- Does every page and major component own a justified function node or support a named relationship?
+- Are `requires`, `shared-state`, `alternative`, `recovery` and destructive-impact edges represented in the frontend map?
+- Do high-frequency or high-criticality functions have a reachable, appropriately persistent surface?
+- Are contextual shortcuts connected to one canonical action owner rather than creating duplicate semantics?
+- Do the proposed page boundaries match real user habits, interruption/return behavior and information needed at the decision moment?
+- Can every function reach feedback, recovery and continuation, including empty, partial, denied and failed states?
+
+If a page or component cannot be traced to the function graph, repair scope and ownership before changing visual treatment. Re-run the [decision-deliberation-protocol](decision-deliberation-protocol.md) for any changed boundary.
+
 ## Review lens: Spatial and dynamic behavior
 
 For every page and major floating element, verify:

@@ -53,7 +53,7 @@ $disk-space-diagnosis 帮我分析 C 盘为什么快满了，解释主要占用�
 $flow-ui-architect 为一个面向客服团队的工单管理后台设计 UI：让主管快速发现快超时工单并分配给合适的客服。先给出主路径、操作成本、页面结构和状态，再决定是否实现代码。
 ```
 
-### Flow UI Architect V2.6
+### Flow UI Architect V2.7
 
 `flow-ui-architect` 支持三种工作模式：
 
@@ -61,7 +61,7 @@ $flow-ui-architect 为一个面向客服团队的工单管理后台设计 UI：�
 - **BUILD**：检查现有项目后实现 UI，并报告实际修改和检查结果。
 - **REVIEW**：审查现有界面的任务摩擦、重复功能、跨页断点和视觉/技术一致性，并修复问题。
 
-每次调用还会维护步骤台账：按步骤读取并应用对应参考文件，产出中间设计记录；不能静默跳步，只有标记 N/A 并说明理由，或报告 BLOCKED 及解决计划，才能进入后续步骤。完成页面蓝图后，Skill 还会执行视觉决策层：Visual Context Profile、用户心理假设与反证、候选视觉方向、Visual Grammar Contract、组件变体派生、真实内容压力测试和 Art Direction Review/Repair。V2.3 新增空间编排与动态行为门禁：为每个主要区域、面板、浮层、筛选器和助手分配空间角色、布局骨架、V0–V4 可见性生命周期、收缩展开和持久化规则、响应式转换、状态恢复及遮挡预算；并用 Task fit、Accessibility、Semantic fit、Hierarchy、Authenticity、Coherence、Craft、Restraint、Distinctiveness 的顺序做反 AI 味复核。V2.4 新增 UI Engineering Quality Gate：为主要区域和共享组件建立工程蓝图，明确 spacing owner、intrinsic sizing、overflow/scroll owner、stacking/Portal/top-layer、collision、hit-testing、focus、异步尺寸稳定、动态 viewport、safe area、字体/图片指标和浏览器验证；实现完成必须有真实运行时审计，不把截图或“组件能渲染”当作生产就绪。V2.6 新增生图参考图门禁：视觉设计或视觉改动必须先用 Image Generation 生成 V0，再至少迭代 V1、V2，逐版记录 prompt、改变的决策、评审结论和拒绝版本；参考图明确批准后，仍要完成空间、布局、视觉、工程和预编码验证，最后才能开始写代码。生图能力或检查能力不可用时必须 BLOCKED，不能用截图、HTML 或文字描述替代。不得因为页面简单、已有组件或时间压力跳过任何决策点。当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
+每次调用还会维护步骤台账：按步骤读取并应用对应参考文件，产出中间设计记录；不能静默跳步，只有标记 N/A 并说明理由，或报告 BLOCKED 及解决计划，才能进入后续步骤。V2.3 新增空间编排与动态行为门禁：为每个主要区域、面板、浮层、筛选器和助手分配空间角色、布局骨架、V0–V4 可见性生命周期、收缩展开和持久化规则、响应式转换、状态恢复及遮挡预算；并用 Task fit、Accessibility、Semantic fit、Hierarchy、Authenticity、Coherence、Craft、Restraint、Distinctiveness 的顺序做反 AI 味复核。V2.4 新增 UI Engineering Quality Gate：为主要区域和共享组件建立工程蓝图，明确 spacing owner、intrinsic sizing、overflow/scroll owner、stacking/Portal/top-layer、collision、hit-testing、focus、异步尺寸稳定、动态 viewport、safe area、字体/图片指标和浏览器验证；实现完成必须有真实运行时审计，不把截图或“组件能渲染”当作生产就绪。V2.6 新增生图参考图门禁：视觉设计或视觉改动必须先用 Image Generation 生成 V0，再至少迭代 V1、V2，逐版记录 prompt、改变的决策、评审结论和拒绝版本；参考图明确批准后，仍要完成空间、布局、视觉、工程和预编码验证，最后才能开始写代码。V2.7 新增功能先行和决策推演门禁：先建立功能点清单、功能关系图、用户使用习惯假设和前端信息架构图，再决定页面、导航、组件和视觉。每个步骤的决策都必须经过证据、候选、用户行为模拟、下游影响和反例检查，并记录选择、拒绝项、置信度和验证方式。生图能力或检查能力不可用时必须 BLOCKED，不能用截图、HTML 或文字描述替代。不得因为页面简单、已有组件或时间压力跳过任何决策点。当需求包含多个页面、路由或较大的关联界面时，Skill 会先执行多页面设计门禁：页面清单与路由图、逐页 Page Element Blueprint、共享产品契约、跨页矩阵、Review/Repair，再进入详细布局或实现。完整规则、示例和验收场景位于 [flow-ui-architect](skills/product/flow-ui-architect/README.md)。
 
 ## 磁盘诊断示例：从占用分析到清理路径
 

@@ -11,6 +11,7 @@ Before the deliverable, include a compact ledger with one row for every applicab
 | Step | Reference read | Decision applied | Artifact produced | Status |
 | --- | --- | --- | --- | --- |
 | Scope and facts |  |  |  | DONE / N/A with reason / BLOCKED |
+| Functional scope and relationship model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Task model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Route model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Page scope and blueprint |  |  |  | DONE / N/A with reason / BLOCKED |
@@ -27,13 +28,23 @@ Do not fill the reference or artifact columns with generic confirmations. Name t
 
 ## DESIGN: single page
 
-Describe intended user, intent, success or experience criterion, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, generated reference image versions and approval, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
+Describe intended user, intent, success or experience criterion, function inventory and relationship graph, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, generated reference image versions and approval, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
 
 ## DESIGN: multiple pages — REQUIRED ORDER
 
 ### Product overview
 
-Product scenario, intended users, intents, success or experience criteria, relevant objects, key assumptions and Red Route graph.
+Product scenario, intended users, intents, success or experience criteria, function inventory, typed relationship graph, user-habit hypotheses, relevant objects, key assumptions and Red Route graph.
+
+### Function-to-frontend map
+
+Show how the function graph becomes the frontend structure before detailed screens:
+
+| Surface | Function nodes owned | Relationship edges crossing the boundary | Persistent / on-demand regions | State and context carried | Canonical action owner |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
+
+Include page or route nodes, navigation levels, major component groups and the state/data handoffs. A Mermaid graph is appropriate when it improves traceability. Every surface and major component must point back to a function node. Every important function must have an entry, result, recovery and continuation path.
 
 ### Page inventory
 
@@ -48,6 +59,7 @@ For EACH page, present:
 | Page | ID and purpose |
 | User / intent | Who wants to do what, with which success or experience criterion |
 | Functions | Actions and consequences |
+| Function relationships | Function nodes owned by this page, incoming/outgoing edges, shared state, canonical owner and user-habit rationale |
 | Content | Data and information shown |
 | Red Routes | Which journeys use the page |
 | Focal point | What should attract attention and why |

@@ -4,6 +4,8 @@
 
 Infer enough of the product to choose a useful interface without turning every short request into a questionnaire. Identify whether users want to find, understand, compare, decide, act, create or explore before prescribing a workflow.
 
+Read [functional-scope-and-relationships](functional-scope-and-relationships.md) first for the function inventory and relationship graph. Task modeling adds user intent and success criteria to those function nodes; it must not replace the function-first scope decision.
+
 ## Model the task
 
 For each meaningful user job, identify:

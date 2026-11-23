@@ -14,7 +14,7 @@ Before the deliverable, include a compact ledger with one row for every applicab
 | Task model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Route model |  |  |  | DONE / N/A with reason / BLOCKED |
 | Page scope and blueprint |  |  |  | DONE / N/A with reason / BLOCKED |
-| Art direction |  |  |  | DONE / N/A with reason / BLOCKED |
+| Art direction and reference image gate |  |  |  | DONE / N/A with reason / BLOCKED |
 | Spatial orchestration |  |  |  | DONE / N/A with reason / BLOCKED |
 | Layout and interaction |  |  |  | DONE / N/A with reason / BLOCKED |
 | Cost and continuity |  |  |  | DONE / N/A with reason / BLOCKED |
@@ -27,7 +27,7 @@ Do not fill the reference or artifact columns with generic confirmations. Name t
 
 ## DESIGN: single page
 
-Describe intended user, intent, success or experience criterion, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
+Describe intended user, intent, success or experience criterion, key assumptions, Red Routes, the Visual Context Profile, bounded user-perception hypotheses, selected or inherited Visual Grammar Contract, generated reference image versions and approval, space roles, layout skeleton, lifecycle/persistence decisions, selected layout, component hierarchy, interactions, responsive transformation, UI Engineering Blueprint summary, realistic-content stress cases, important states and validation.
 
 ## DESIGN: multiple pages — REQUIRED ORDER
 
@@ -93,6 +93,21 @@ The Visual Context Profile and Visual Grammar Contract must already be recorded 
 ### UI Engineering Quality
 
 For each major region or shared primitive, summarize the Engineering Blueprint: spacing owner, intrinsic sizing and content-growth rule, overflow and scroll owner, containing block and sticky reference, stacking/portal/top-layer policy, collision boundary, focus/hit-testing behavior, long-content/i18n/RTL policy, async size stability, responsive/safe-area strategy, asset metrics and validation cases. For BUILD, include browser runtime audit, screenshot regression, accessibility automation and manual keyboard/touch/overlay checks with verified or unverified status.
+
+### Generated reference image record
+
+Before detailed screen implementation, include:
+
+| Field | Content |
+| --- | --- |
+| Capability | Image Generation capability used, or `BLOCKED` with reason |
+| Version chain | `V0` concept → `V1` structure → `V2` realism → optional `V3+` polish |
+| Prompt/change log | Prompt, input reference, changed decision group and result for each version |
+| Review | Visual grammar, space, content realism, responsive and anti-AI findings per version |
+| Approval | Approved version, approval_by (`user` or `agent_after_review`), approval basis and open risks |
+| Implementation comparison | Actual screenshot/behavior comparison after BUILD and repairs |
+
+`V0`–`V2` and the approval record are required for visual DESIGN/BUILD work. If the task is genuinely non-visual, record the specific N/A reason.
 
 ### Review and Repair log
 

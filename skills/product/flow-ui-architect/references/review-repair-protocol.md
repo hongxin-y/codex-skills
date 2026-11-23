@@ -12,9 +12,15 @@ Perform repairs within the requested scope. Discussion-only reviews end with evi
 
 ## Required loop
 
-Page Blueprints → Art Direction Gate → Review → Issue Ledger → Repair → Regression Review → Re-evaluate.
+Page Blueprints → Art Direction Gate → Generated Reference Image Iteration → Review → Issue Ledger → Repair → Regression Review → Re-evaluate.
 
 Repeat while material issues remain and actionable progress is possible. Do not prescribe a fixed number of cycles. The distinct review lenses below must be covered, even if they are combined for a small product.
+
+## Review lens: Reference image iteration
+
+Before detailed implementation, verify the generated reference chain has `V0`, at least two targeted revisions (`V1`, `V2`) and an explicit approval record. Compare each version against the Visual Grammar Contract, space roles, psychological hypotheses, realistic content, responsive pressure and anti-AI tests. Record what changed and why the previous version was rejected or retained. If image generation or inspection is unavailable, mark the gate blocked; do not treat a code preview or screenshot as a substitute.
+
+After BUILD, compare actual screenshots and behavior against the approved reference. A mismatch in hierarchy, spacing, surface, component expression or responsive transformation reopens the relevant design step; an engineering mismatch reopens the UI Engineering Blueprint and runtime checks.
 
 ## Review lens: Individual page
 

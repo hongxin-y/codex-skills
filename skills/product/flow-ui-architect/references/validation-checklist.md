@@ -6,6 +6,8 @@
 - [ ] Each required reference was read before the related decision was made.
 - [ ] Each DONE step has a concrete artifact, not a generic claim.
 - [ ] Each skipped step is marked N/A with a task-specific reason; blocked steps are reported honestly.
+- [ ] Visual DESIGN/BUILD includes an Image Generation reference chain (`V0`, `V1`, `V2+`), per-version review log and explicit approval record before detailed implementation.
+- [ ] BUILD did not start UI code before the reference image gate, pre-code design validation and UI Engineering Blueprint were complete.
 - [ ] BUILD did not begin before the task model, route model, blueprint, Art Direction Contract, spatial orchestration record, UI Engineering Blueprint and interaction contract were recorded.
 - [ ] BUILD did not write UI code until every pre-build decision step was DONE or explicitly N/A/BLOCKED with a resolution plan.
 - [ ] REVIEW includes observed evidence, repairs and rerun checks when repairs were requested.
@@ -90,6 +92,7 @@
 - Does mobile transform the workflow appropriately?
 - [ ] Does the visual decision survive realistic content without generic card/gradient/glass repetition?
 - [ ] Were deletion, substitution and realistic-content anti-AI tests recorded with repairs?
+- [ ] Was the approved reference compared with the implemented result after BUILD, with deviations repaired or reported?
 
 ## Engineering
 

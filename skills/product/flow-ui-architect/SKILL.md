@@ -1,6 +1,6 @@
 ---
 name: flow-ui-architect
-description: "Design, review and implement UI/UX for websites, apps and multi-page products. Use for feature and interaction design, information architecture, visual systems, frontend UI changes and usability reviews. Choose patterns by user intent and preserve existing behavior outside the requested scope."
+description: "Design, review and implement UI/UX for websites, apps and multi-page products with a mandatory generated-reference-image iteration gate before implementation. Use for feature and interaction design, information architecture, visual systems, frontend UI changes and usability reviews. Choose patterns by user intent and preserve existing behavior outside the requested scope."
 ---
 
 # Flow UI Architect
@@ -19,6 +19,7 @@ Turn a brief product scenario into an appropriate, usable, attractive and implem
 - Make important decisions explicit, but adapt explanation length to task complexity.
 - Keep real accessibility standards and technical constraints.
 - Treat this file and the routed reference files as an execution protocol. Do not jump from a brief to a polished screen or code without completing the required intermediate records.
+- For new visual design or visual changes, use the Image Generation capability to create a visual reference before detailed implementation, iterate it through the required review rounds, and do not write UI code until the reference is approved and all pre-code design and validation steps are complete.
 - For every required step, read the named reference before making the step's decision, apply the relevant rules, and record the concrete artifact produced. A reference may be marked `N/A` only with a reason tied to the task; never claim to have followed unread guidance.
 
 ## Select the operating mode
@@ -61,7 +62,7 @@ Run this protocol for DESIGN, BUILD and REVIEW. Keep a visible step ledger in th
 | 1. Task model | User intent, success criterion, actors, objects, relevant permissions and constraints | `task-modeling.md` | DONE, N/A with reason, or BLOCKED |
 | 2. Route model | Intent-appropriate journey, relevant feedback, recovery and continuation; Red Route map | `decision-rules.md` | DONE, N/A with reason, or BLOCKED |
 | 3. Page scope and blueprint | Page inventory, or a compact Page Element Blueprint for a single page | `multi-page-design.md`, `design-output-template.md` | DONE, N/A with reason, or BLOCKED |
-| 4. Art direction | Visual Context Profile, user-perception hypotheses, candidate directions or inherited contract, selected Visual Grammar Contract | `visual-direction-selection.md`, `user-perception-and-visual-decisions.md`, `art-direction-catalog.md`, `design-system-profiles.md` when a system foundation exists | DONE, N/A with reason, or BLOCKED |
+| 4. Art direction and reference image gate | Visual Context Profile, user-perception hypotheses, candidate directions or inherited contract, selected Visual Grammar Contract, generated reference versions `V0 → V1 → V2+`, review log and approval record | `visual-direction-selection.md`, `user-perception-and-visual-decisions.md`, `image-reference-iteration.md`, `art-direction-catalog.md`, `design-system-profiles.md` when a system foundation exists | DONE, N/A with reason, or BLOCKED |
 | 5. Spatial orchestration | Space roles, layout skeleton, lifecycle, visibility, persistence, responsive transformation and occlusion budget | `spatial-orchestration.md`, `component-morphology.md`, `visibility-persistence.md`, `responsive-transformation.md`, `floating-ui-and-occlusion.md`; `workspace-layouts.md` when applicable | DONE, N/A with reason, or BLOCKED |
 | 6. Layout and interaction | Compared layout choice, component ownership and interaction states | `layout-patterns.md`, `interaction-patterns.md`, `component-style-grammar.md` | DONE, N/A with reason, or BLOCKED |
 | 7. Cost and continuity | P/K/D/C/W/E/M analysis, preserved context and handoffs | `operation-cost.md`, `flow-continuity.md` | DONE, N/A with reason, or BLOCKED |
@@ -73,9 +74,10 @@ Run this protocol for DESIGN, BUILD and REVIEW. Keep a visible step ledger in th
 Rules for the ledger:
 
 - Do not mark a step DONE with a generic sentence. Record the decision, the artifact, and the reference rule that changed the decision.
-- Do not start detailed layout or UI code while Steps 0–5 are incomplete. BUILD must inspect the repository before implementation; REVIEW must record observed evidence before proposing repairs. BUILD may write UI code only after Steps 0–9 have a complete pre-build artifact or an explicit `N/A — <reason>` / `BLOCKED — <resolution plan>`. BUILD must not declare implementation complete until Steps 9–10 are rerun against actual browser behavior; a blocked decision cannot be silently skipped.
+- Do not start detailed layout or UI code while Steps 0–5 and the Step 4 Reference Approval Gate are incomplete. BUILD must inspect the repository before implementation; REVIEW must record observed evidence before proposing repairs. BUILD may write UI code only after the approved reference version, all pre-code design steps, UI Engineering Blueprint and pre-code Review/Repair are complete or explicitly resolved as `N/A` / `BLOCKED` with a plan. BUILD must not declare implementation complete until engineering and review steps are rerun against actual browser behavior; a blocked decision cannot be silently skipped.
 - If a step does not apply, write `N/A — <specific reason>` and continue only after checking that later steps do not depend on it. If it is blocked, state the blocker and either ask the smallest necessary question or continue with a labeled assumption when safe.
 - Every major region, panel, filter, floating element, assistant, feedback layer and responsive variant must receive a spatial role, visibility lifecycle, persistence rule, container choice, occlusion budget and state-restore decision. “Simple page”, “existing component” and “time pressure” are not valid reasons to omit a decision point.
+- Every visual design or visual change must have an auditable image reference chain with at least `V0`, `V1` and `V2` (or a documented `BLOCKED` reason). A generated image cannot be replaced by a screenshot, placeholder, text-only moodboard or code preview.
 - After implementation or repair, rerun the affected steps against actual behavior. A design note, blueprint or paper review does not prove the UI works.
 - The final response must include the completed ledger, assumptions, unresolved limitations, changed files when applicable, and actual checks performed.
 
@@ -100,6 +102,12 @@ For multiple pages or connected product surfaces, the MULTI-PAGE DESIGN GATE bel
 Run the Art Direction Gate after the Page Element Blueprint and before detailed layout styling or code. **MUST READ and apply** [visual-direction-selection](references/visual-direction-selection.md) and [user-perception-and-visual-decisions](references/user-perception-and-visual-decisions.md). Use [art-direction-catalog](references/art-direction-catalog.md) when the repository or brand does not already establish a direction, and use [design-system-profiles](references/design-system-profiles.md) to separate interaction-system foundations from visual language. Record the Visual Context Profile, psychological hypotheses with observable signals and counter-risks, candidate comparison or inherited direction, selected Visual Grammar Contract and rejected alternatives in Step 4.
 
 Do not treat a palette, gradient, glass effect, font choice or component variant as an art direction. The direction must explain typography, grid, density, palette strategy, shape, surface/depth, imagery, iconography, motion and component expression as one system.
+
+### Generate and iterate the visual reference before continuing
+
+Immediately after the Visual Grammar Contract, **MUST READ and apply** [image-reference-iteration](references/image-reference-iteration.md) and use the Image Generation capability to generate `V0`. Then generate at least `V1` and `V2` through targeted iterations. Inspect each result, record the prompt and changed decision group, run the reference review checks, preserve rejected versions and write the Reference Approval Gate record. If image generation, image inspection or approval is unavailable, mark the gate `BLOCKED`; do not substitute HTML, code, screenshot or verbal approval and do not begin implementation.
+
+The approved image is the visual source of truth for subsequent spatial, layout, visual-system and engineering decisions. It does not replace those decisions: complete every later step, pre-code validation and review before BUILD code begins. After implementation, compare real screenshots and behavior with the approved reference and repair deviations.
 
 ### Orchestrate space and dynamic behavior before detailed layout
 
@@ -134,6 +142,8 @@ Engineering invariants: parent layouts own sibling spacing; `min-width:0` / `min
 ### Deliver and validate
 
 For DESIGN, provide an actionable blueprint or prototype. For BUILD, implement and run available checks. For REVIEW, prioritize findings and repairs. **MUST READ and apply** [design-output-template](references/design-output-template.md), [implementation-playbook](references/implementation-playbook.md) when building, [review-repair-protocol](references/review-repair-protocol.md), [art-direction-review](references/art-direction-review.md), [anti-ai-template-review](references/anti-ai-template-review.md), [perceived-quality](references/perceived-quality.md), [ui-debug-playbook](references/ui-debug-playbook.md) and [validation-checklist](references/validation-checklist.md) before delivery. Review Task fit and Accessibility first, then Semantic fit, Hierarchy, Authenticity, Coherence, Craft, Restraint and Distinctiveness; do not compress this into an unsupported total score.
+
+For BUILD, run a **pre-code Review/Repair** against the approved reference, page blueprints, spatial decisions, visual system and Engineering Blueprint. Resolve blocking issues before writing code. After implementation, rerun the same review against actual browser behavior, screenshots and input modes; a pre-code pass never substitutes for the post-code pass.
 
 ## Mandatory MULTI-PAGE DESIGN GATE
 
@@ -202,6 +212,7 @@ After coding, repeat relevant reviews against actual behavior. A paper design pa
 - [scenario-extensions](references/scenario-extensions.md): conditional collaboration, editing, long-running, bulk and consequential-action rules.
 - [visual-direction-selection](references/visual-direction-selection.md): Visual Context Profile, candidate directions and Visual Grammar Contract.
 - [user-perception-and-visual-decisions](references/user-perception-and-visual-decisions.md): bounded psychological hypotheses, visual responses and counter-risks.
+- [image-reference-iteration](references/image-reference-iteration.md): mandatory generated reference image versions, review loop and pre-code approval gate.
 - [art-direction-catalog](references/art-direction-catalog.md): visual languages, fit and anti-pattern risks.
 - [layout-patterns](references/layout-patterns.md): task-to-layout selection.
 - [multi-page-design](references/multi-page-design.md): per-page element blueprints and page contracts.

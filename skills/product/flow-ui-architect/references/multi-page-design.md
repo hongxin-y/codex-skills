@@ -91,6 +91,12 @@ Do not optimize to a universal click ceiling. A necessary confirmation can be ju
 - Record the floating occlusion budget, focus return target, keyboard behavior and the fallback container if the current container becomes too small.
 - If any field is not applicable, write `N/A — <specific reason>`; a simple page or shared component is not an exemption.
 
+### Generated reference image
+
+- Record the approved reference version used by the page (`V0 → V1 → V2+`), the prompt/change log, review findings and approval basis.
+- If pages intentionally diverge, explain which Visual Grammar Contract rules and reference-image decisions are shared versus page-specific.
+- Do not enter detailed implementation until the reference image gate and the page's pre-code validation are complete.
+
 ### UI Engineering quality
 
 - Record the page's Engineering Blueprint for major regions and shared primitives: layout/sizing, spacing owner, intrinsic growth, overflow/scroll owner, positioning/sticky reference, stacking/Portal/top-layer, overlay collision, focus/hit testing, long content/i18n/RTL, async placeholder/error slots, responsive viewport/safe area, asset metrics, motion risk and validation cases.

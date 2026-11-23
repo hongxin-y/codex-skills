@@ -2,6 +2,8 @@
 
 Use this lens after the Visual Grammar Contract and after meaningful implementation changes.
 
+For new visual work, apply it to the generated reference chain before detailed implementation and again to actual implementation screenshots. Confirm `V0 → V1 → V2+`, targeted changes, rejected variants and an explicit approval record. Do not treat a single attractive image as evidence that the direction is stable, semantic or implementable.
+
 ## Consistency
 
 - Pages look like one product without forcing identical layouts.

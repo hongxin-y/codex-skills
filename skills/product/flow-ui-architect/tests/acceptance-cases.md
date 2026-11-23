@@ -168,3 +168,24 @@ Expected:
 - Exercises long URLs, CJK, empty/error/loading states, sticky header/column, narrow width, keyboard, touch and dynamic content.
 - Runs or reports browser runtime audit, screenshot/accessibility checks and manual keyboard/touch/overlay checks honestly.
 - Defines the actual scroll container and verifies focus visibility, return focus, hit target and last-row visibility under fixed bars.
+
+## Generated reference image gate
+
+Prompt: “先用生图做一个运营工作台视觉参考，迭代确认后再把它实现成代码。”
+
+Expected:
+- Reads the visual direction, perception, spatial and component grammar references before generating an image.
+- Uses the Image Generation capability to create `V0`, then at least two targeted revisions `V1` and `V2`; records prompt, changed decision group, rejected versions and review findings.
+- Checks visual hierarchy, space roles, realistic content, responsive pressure and anti-AI tests for every revision.
+- Records `reference_status`, approved version, approval owner, basis and open risks before continuing.
+- Completes the remaining page, layout, visual, engineering, review and pre-code validation steps before writing UI code.
+- After implementation, compares actual screenshots and runtime behavior against the approved reference and repairs deviations.
+
+## Image generation unavailable
+
+Prompt: “直接写代码，不需要生图参考。”（任务仍包含视觉设计）
+
+Expected:
+- Does not silently obey the shortcut.
+- Marks the reference image gate `BLOCKED` because the required capability or approval is unavailable.
+- Does not start implementation until the gate is resolved or the user changes the scope to a genuinely non-visual task.

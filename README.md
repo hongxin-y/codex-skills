@@ -1,6 +1,6 @@
 # Codex Skills Collection
 
-一组可复用的 Codex 技能，覆盖旅行规划、Windows 磁盘诊断和文档润色。每个技能都可以独立使用，并在对应目录中维护自己的说明和配套资源。
+一组可复用的 Codex 技能，覆盖旅行规划、Windows 磁盘诊断、文档润色和技术简历优化。每个技能都可以独立使用，并在对应目录中维护自己的说明和配套资源。
 
 ## 技能目录
 
@@ -10,6 +10,7 @@
 | Travel · 旅行 | [map-itinerary-visualizer](skills/travel/map-itinerary-visualizer/SKILL.md) | 定位行程地点，按日期规划访问顺序，生成带编号、路线箭头和图例的地图图片。 |
 | System · 系统 | [disk-space-diagnosis](skills/system/disk-space-diagnosis/SKILL.md) | 只读分析 Windows 磁盘占用，解释大项用途、清理风险和可行的优化路径，不默认执行清理。 |
 | Writing · 写作 | [document-refinement](skills/writing/document-refinement/SKILL.md) | 润色中英文邮件、报告和方案，保留原意与修改边界，减少空话和写作过程旁白，逐步补全缺失内容。 |
+| Writing · 写作 | [resume-refinement](skills/writing/resume-refinement/SKILL.md) | 润色和重构中英文技术简历，保留事实边界，完成 HTML/PDF 版式与交付验收。 |
 | Product · 产品 | [flow-ui-architect](skills/product/flow-ui-architect/SKILL.md) | 根据业务场景设计、审查和实现连贯的 task-first UI；多页面任务先建立页面蓝图与跨页契约。 |
 
 ## 快速开始

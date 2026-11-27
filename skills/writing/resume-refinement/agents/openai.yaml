@@ -1,0 +1,8 @@
+interface:
+  display_name: "Technical Resume Refinement"
+  short_description: "润色技术简历并验收 HTML/PDF 交付"
+  brand_color: "#183A57"
+  default_prompt: "使用 $resume-refinement 润色并验收这份中英文技术简历，保留已确认事实与数据。"
+
+policy:
+  allow_implicit_invocation: true

@@ -40,4 +40,4 @@ description: "润色和重构中英文技术简历，保留事实边界，并完
 
 - 文字润色时可结合 `$document-refinement`，但仍遵守本技能的事实底稿和简历证据规则。
 - 视觉调整时可借用 `$flow-ui-architect` 的信息层级、栅格、密度、响应式和视觉一致性方法；本技能只处理静态简历，不要求为普通简历编辑生成产品 UI 参考图。
-- 重大重构、双语同步、岗位定制或交付回归前，读取 [Resume Revision Guide V1.5](references/resume-revision-guide-v1.5.md)；小型单句润色可直接按本入口执行。
+- 重大重构、双语同步、岗位定制或交付回归前，读取 [Resume Revision Guide V1.6](references/resume-revision-guide-v1.6.md)；小型单句润色可直接按本入口执行。
